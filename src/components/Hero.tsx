@@ -96,16 +96,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
             </div>
 
 
-            {/* Social proof mini-strip */}
+            {/* Fatos do produto (sem métricas de uso que ainda não temos) */}
             <div className="pt-4 flex items-center justify-center lg:justify-start gap-6 border-t border-slate-200/70">
               <div>
-                <p className="text-2xl font-bold text-slate-900 tracking-tight">-45%</p>
-                <p className="text-xs text-slate-500 font-medium">Faltas (No-Show)</p>
+                <p className="text-2xl font-bold text-slate-900 tracking-tight">48h</p>
+                <p className="text-xs text-slate-500 font-medium">Lembrete com confirmação</p>
               </div>
               <div className="w-px h-8 bg-slate-200" />
               <div>
-                <p className="text-2xl font-bold text-teal-700 tracking-tight">85 min</p>
-                <p className="text-xs text-slate-500 font-medium">Economizados por dia</p>
+                <p className="text-2xl font-bold text-teal-700 tracking-tight">SOAP</p>
+                <p className="text-xs text-slate-500 font-medium">Rascunho por IA, revisado por você</p>
               </div>
               <div className="w-px h-8 bg-slate-200" />
               <div>

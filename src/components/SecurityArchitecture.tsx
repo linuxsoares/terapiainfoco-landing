@@ -242,7 +242,7 @@ export const SecurityArchitecture: React.FC = () => {
                 </p>
               </div>
               <span className="px-3 py-1.5 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs font-bold shrink-0">
-                100% Blindado
+                Guarda de 5 anos
               </span>
             </div>
           </div>

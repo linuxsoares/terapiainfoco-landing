@@ -245,11 +245,11 @@ export const AiSoapSimulator: React.FC = () => {
                 </div>
                 <div className={`flex items-center gap-2 ${processStep >= 2 ? 'text-teal-400' : 'text-slate-500'}`}>
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>2. Diarização e Criptografia com DEK única (AES-256)</span>
+                  <span>2. Separação das falas e criptografia (AES-256)</span>
                 </div>
                 <div className={`flex items-center gap-2 ${processStep >= 3 ? 'text-teal-400' : 'text-slate-500'}`}>
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>3. Extração dos eixos SOAP via Vertex AI (Zero Data Retention)</span>
+                  <span>3. Rascunho SOAP por IA, sem nome, CPF ou contatos do paciente</span>
                 </div>
                 <div className={`flex items-center gap-2 ${processStep >= 4 ? 'text-teal-400' : 'text-slate-500'}`}>
                   <CheckCircle2 className="w-3.5 h-3.5" />

@@ -41,7 +41,7 @@ export const FeatureModules: React.FC = () => {
           </h2>
 
           <p className="text-slate-600 text-base sm:text-lg">
-            Projetado de ponta a ponta para a realidade do psicólogo clínico brasileiro: da confirmação da sessão no WhatsApp até a emissão de laudos com validade jurídica.
+            Projetado de ponta a ponta para a realidade do psicólogo clínico brasileiro: do lembrete da sessão por e-mail até a emissão de documentos com validação pública.
           </p>
         </div>
 
@@ -138,7 +138,7 @@ export const FeatureModules: React.FC = () => {
                         <p className="text-slate-500 text-[11px]">Teleconsulta • Confirmada</p>
                       </div>
                       <span className="px-2 py-1 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">
-                        WhatsApp Enviado
+                        Presença confirmada
                       </span>
                     </div>
 
@@ -152,14 +152,14 @@ export const FeatureModules: React.FC = () => {
                         <p className="text-slate-500 text-[11px]">Teleconsulta • Recorrente</p>
                       </div>
                       <span className="px-2 py-1 rounded bg-teal-100 text-teal-800 text-[10px] font-bold">
-                        Lembrete 2h OK
+                        Lembrete enviado
                       </span>
                     </div>
                   </div>
 
                   <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2">
                     <BellRing className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Lembretes automáticos reduziram faltas para menos de 4% nas clínicas piloto.</span>
+                    <span>Lembrete por e-mail 48h antes: o paciente confirma presença ou cancela pelo link, e você é avisado.</span>
                   </div>
                 </div>
               )}

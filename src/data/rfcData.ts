@@ -144,9 +144,9 @@ export const RFC_MODULES = [
     id: 'modulo-1',
     badge: 'Módulo 1 • RFC-001 §3.1',
     title: 'Agenda Inteligente & Redução de Faltas',
-    description: 'Controle completo da sua grade clínica com buffers entre sessões, agendamento recorrente e notificações multicanal que diminuem faltas em até 45%.',
+    description: 'Controle completo da sua grade clínica com buffers entre sessões, agendamento recorrente e lembretes por e-mail com confirmação de presença.',
     highlights: [
-      'Lembretes automáticos via WhatsApp oficial e E-mail (48h e 2h antes)',
+      'Lembrete automático por e-mail 48h antes, com confirmar ou cancelar pelo link',
       'Políticas configuráveis de cancelamento prévio (ex: mínimo 24h)',
       'Intervalo inteligente de respiro (buffer de 10-15 min) entre atendimentos',
       'Fluxo de estados da sessão: Solicitada, Confirmada, Em Andamento e Concluída'
@@ -359,7 +359,7 @@ export const FAQS = [
   {
     category: 'Segurança & LGPD',
     question: 'A inteligência artificial retém ou utiliza os dados dos meus pacientes para treinamento?',
-    answer: 'Absolutamente não. Utilizamos provedores com certificação HIPAA / ISO 27001 e acordos contratuais de Zero Data Retention (como Vertex AI e Azure OpenAI Gov). O áudio e a transcrição bruta são criptografados com a chave única do paciente (DEK) e descartados da memória volátil imediatamente após o processamento. Nenhuma informação de paciente alimenta modelos globais de linguagem.'
+    answer: 'Não. A síntese do rascunho SOAP usa a API da OpenAI, que não usa os dados enviados pela API para treinar modelos. Antes do envio, nomes, CPF, telefones e e-mails são removidos do texto. A teleconsulta não é gravada: o áudio vira texto durante a sessão e é descartado, e a síntese só acontece com o consentimento específico do paciente para uso de IA, registrado na plataforma.'
   },
   {
     category: 'Segurança & LGPD',
@@ -392,7 +392,7 @@ export const PRICING_PLANS = [
       'Transcrição & Diarização com IA (20 horas/mês)',
       'Geração de notas SOAP com Human-in-the-Loop',
       'Prontuário eletrônico imutável (CFP nº 001/2009)',
-      'Lembretes por E-mail e WhatsApp',
+      'Lembretes automáticos por e-mail',
       'Criptografia AES-256-GCM ponta a ponta',
       'Suporte via chat prioritário'
     ],
@@ -401,11 +401,11 @@ export const PRICING_PLANS = [
   {
     id: 'pro',
     name: 'Pro Clínico',
-    tagline: 'O mais escolhido por psicólogos com agenda ativa e foco em produtividade',
+    tagline: 'Para psicólogos com agenda ativa e foco em produtividade',
     monthlyPrice: 199,
     annualPrice: 159,
     popular: true,
-    badge: 'Mais Popular',
+    badge: 'Recomendado',
     features: [
       'Sessões ilimitadas',
       'Teleconsulta ilimitada com sala de espera',
@@ -432,9 +432,8 @@ export const PRICING_PLANS = [
       'Controle das salas de teleconsulta da equipe',
       'Painel de compliance e DPO com logs de auditoria',
       'Relatórios gerenciais e exportação fiscal padronizada',
-      'Backup de chaves multi-região (KMS redundancy)',
       'Treinamento de equipe e onboarding assistido',
-      'SLA garantido de 99.9% com gerente de conta'
+      'Gerente de conta dedicado'
     ],
     cta: 'Falar com Consultor de Clínicas'
   }

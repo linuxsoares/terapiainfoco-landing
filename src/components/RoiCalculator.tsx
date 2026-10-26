@@ -155,7 +155,7 @@ export const RoiCalculator: React.FC<RoiCalculatorProps> = ({ onOpenDemo }) => {
                     R$ {extraRevenuePotential.toLocaleString('pt-BR')} <span className="text-xs text-slate-400 font-normal">/ mês</span>
                   </p>
                   <p className="text-[11px] text-slate-400">
-                    Mesmo dedicando apenas metade desse tempo a novas consultas, você multiplica o investimento na plataforma por mais de 10x.
+                    Estimativa: considera cerca de 3 minutos para revisar o rascunho de cada sessão e que 60% do tempo poupado vire novas consultas. O resultado real depende da sua rotina.
                   </p>
                 </div>
               </div>
