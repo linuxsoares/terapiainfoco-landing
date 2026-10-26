@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FeatureModules } from './components/FeatureModules';
@@ -13,10 +13,25 @@ import { Footer } from './components/Footer';
 import { LeadModal } from './components/LeadModal';
 import { FindTherapistSection } from './components/FindTherapistSection';
 import { ValidationPortal } from './components/ValidationPortal';
+import { LEGAL_HASHES, LegalPage, type LegalPageKind } from './components/LegalPage';
 
 
 export function App() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  // Páginas legais por âncora (#termos, #privacidade): o site é estático e de página única
+  const [legalPage, setLegalPage] = useState<LegalPageKind | null>(() => LEGAL_HASHES[window.location.hash] ?? null);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      const next = LEGAL_HASHES[window.location.hash] ?? null;
+      setLegalPage(next);
+      if (next) window.scrollTo(0, 0);
+      // Âncora de seção vinda de uma página legal: a seção só existe depois de renderizar
+      else if (window.location.hash) setTimeout(() => document.getElementById(window.location.hash.slice(1))?.scrollIntoView());
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   const handleOpenDemo = () => setIsDemoModalOpen(true);
   const handleCloseDemo = () => setIsDemoModalOpen(false);
@@ -33,7 +48,7 @@ export function App() {
       {/* Sticky Header */}
       <Navbar onOpenDemo={handleOpenDemo} />
 
-      {/* Main Content Sections */}
+      {legalPage ? <LegalPage kind={legalPage} /> : (
       <main className="flex-1">
         {/* Hero Section */}
         <Hero
@@ -72,6 +87,7 @@ export function App() {
         {/* Regulatory & Technical FAQ */}
         <FaqSection onOpenDemo={handleOpenDemo} />
       </main>
+      )}
 
       {/* Footer with Compliance & Whitepaper Notices */}
       <Footer onOpenDemo={handleOpenDemo} />

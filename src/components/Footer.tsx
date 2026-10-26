@@ -154,11 +154,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDemo }) => {
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
           <p>© {new Date().getFullYear()} TerapiaInFoco Tecnologia em Saúde Mental Ltda. Todos os direitos reservados.</p>
           <div className="flex items-center gap-4">
-            <span className="hover:text-slate-400 cursor-pointer">Termos de Uso</span>
+            <a href="#termos" className="hover:text-slate-400">Termos de Uso</a>
             <span>•</span>
-            <span className="hover:text-slate-400 cursor-pointer">Aviso de Privacidade LGPD</span>
+            <a href="#privacidade" className="hover:text-slate-400">Aviso de Privacidade LGPD</a>
             <span>•</span>
-            <span className="hover:text-slate-400 cursor-pointer">Segurança Criptográfica</span>
+            <a href="#seguranca" className="hover:text-slate-400">Segurança Criptográfica</a>
           </div>
         </div>
 
