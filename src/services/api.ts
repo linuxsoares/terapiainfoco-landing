@@ -1,4 +1,4 @@
-import type { CreateLeadDTO, ValidateDocumentResponse } from '@terapiainfoco/shared';
+import type { CreateLeadDTO, ValidateDocumentResponse } from '../shared';
 
 // Em produção a URL da API vem do build (VITE_API_URL); localhost só no desenvolvimento
 const configuredApiUrl = (import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3000/api' : '')).trim().replace(/\/+$/, '');

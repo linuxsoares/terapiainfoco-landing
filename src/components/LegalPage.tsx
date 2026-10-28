@@ -1,5 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
-import { LEGAL_TERMS_VERSION, PRIVACY_CONTACT_EMAIL, PRIVACY_NOTICE, TERMS_OF_USE } from '@terapiainfoco/shared';
+import { LEGAL_TERMS_VERSION, PRIVACY_CONTACT_EMAIL, PRIVACY_NOTICE, TERMS_OF_USE } from '../shared';
 
 export type LegalPageKind = 'termos' | 'privacidade';
 

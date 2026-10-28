@@ -8,7 +8,7 @@ import {
   FileCheck2
 } from 'lucide-react';
 
-import type { ValidateDocumentResponse } from '@terapiainfoco/shared';
+import type { ValidateDocumentResponse } from '../shared';
 import { landingApi } from '../services/api';
 
 export const ValidationPortal: React.FC = () => {
