@@ -11,7 +11,7 @@
  */
 
 /** Versão vigente (data de publicação) dos Termos de Uso e do Aviso de Privacidade */
-export const LEGAL_TERMS_VERSION = '2026-10-26';
+export const LEGAL_TERMS_VERSION = '2026-10-28';
 
 /** Canal do encarregado de dados (LGPD Art. 41) e de contato geral */
 export const PRIVACY_CONTACT_EMAIL = 'dpo@terapiainfoco.com.br';
@@ -116,6 +116,7 @@ export const PRIVACY_NOTICE: LegalDocument = {
         'Conta: nome, e-mail, telefone, CRP e região, senha (guardada apenas como hash), configuração de dois fatores e chaves de acesso (passkeys).',
         'Pacientes: dados cadastrais (nome, CPF, contato, contato de emergência), agendamentos, prontuário, anamnese, documentos, pagamentos de sessões e registros de consentimento.',
         'Sessões com transcrição: o áudio é enviado ao provedor de transcrição e descartado em seguida, sem ser armazenado pela plataforma; a transcrição e a síntese aprovadas ficam no prontuário.',
+        'Diário Guiado (opcional, só para pacientes que o ativarem): mensagens escritas pelo paciente, respostas da inteligência artificial, alertas de segurança e o resumo gerado para o psicólogo, tudo guardado cifrado.',
         'Uso e segurança: endereço IP, data e hora de acesso e ações realizadas, registrados em trilha de auditoria imutável.'
       ]
     },
@@ -125,6 +126,7 @@ export const PRIVACY_NOTICE: LegalDocument = {
         'Prestar o serviço contratado (agenda, prontuário, documentos, lembretes): execução de contrato e, para dados de saúde, tutela da saúde por profissional de saúde (LGPD Art. 11, II, f).',
         'Guardar o prontuário pelo prazo legal: cumprimento de obrigação legal e regulatória (Resolução CFP nº 001/2009).',
         'Transcrição e síntese por inteligência artificial: somente com consentimento específico do paciente, registrado por finalidade e revogável a qualquer momento; sem ele, o recurso fica bloqueado.',
+        'Diário Guiado com inteligência artificial entre sessões: consentimento específico e em destaque dado pelo próprio paciente (LGPD Art. 11, I), revogável a qualquer momento; a equipe do consultório não pode aceitar por ele. O resumo e a conversa ficam disponíveis só para o psicólogo responsável. Mensagens que indiquem risco à vida mostram contatos de emergência e geram um aviso ao psicólogo (proteção da vida, LGPD Art. 11, II, e).',
         'Segurança, prevenção a fraudes e auditoria: legítimo interesse e cumprimento de obrigação legal.',
         'Não vendemos dados, não fazemos publicidade com dados de saúde e não usamos dados clínicos para treinar modelos de inteligência artificial.'
       ]
@@ -132,15 +134,16 @@ export const PRIVACY_NOTICE: LegalDocument = {
     {
       heading: '4. Com quem compartilhamos',
       paragraphs: [
-        'Somente com fornecedores necessários ao funcionamento, sob contrato: Supabase (banco de dados), Railway (hospedagem dos servidores), Resend (envio de e-mails) e OpenAI (transcrição de áudio e síntese de sessões, apenas quando houver consentimento do paciente).',
+        'Somente com fornecedores necessários ao funcionamento, sob contrato: Supabase (banco de dados), Railway (hospedagem dos servidores), Resend (envio de e-mails) e OpenAI (transcrição de áudio, síntese de sessões e Diário Guiado, apenas quando houver consentimento do paciente).',
         'Antes da síntese, nome, CPF, telefones e e-mails do paciente são removidos do texto enviado à OpenAI. Conforme a política do provedor, dados enviados pela API não são usados para treinar modelos, podendo ser retidos temporariamente para monitoramento de abuso.',
+        'No Diário Guiado, cada mensagem tem nome do paciente, do psicólogo e do contato de emergência, CPF, telefones e e-mails removidos antes do envio, e o recurso só funciona com retenção zero contratada com a OpenAI (o conteúdo não fica guardado no provedor). Mensagens que indiquem crise não são enviadas à inteligência artificial.',
         'Autoridades públicas, quando houver obrigação legal ou ordem judicial.'
       ]
     },
     {
       heading: '5. Transferência internacional',
       paragraphs: [
-        'Os servidores e o banco de dados ficam nos Estados Unidos, assim como a OpenAI. A transferência ocorre com base em cláusulas contratuais e garantias de proteção adequadas (LGPD Art. 33), e os dados sensíveis são cifrados antes de serem gravados.'
+        'Os servidores e o banco de dados ficam nos Estados Unidos, assim como a OpenAI, que processa a transcrição, a síntese e o Diário Guiado. A transferência ocorre com base em cláusulas contratuais e garantias de proteção adequadas (LGPD Art. 33), e os dados sensíveis são cifrados antes de serem gravados.'
       ]
     },
     {
