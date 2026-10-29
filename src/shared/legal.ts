@@ -13,6 +13,14 @@
 /** Versão vigente (data de publicação) dos Termos de Uso e do Aviso de Privacidade */
 export const LEGAL_TERMS_VERSION = '2026-10-28';
 
+/** Versão vigente do texto de consentimento da newsletter; mudou o texto, muda a versão */
+export const NEWSLETTER_CONSENT_VERSION = '2026-10-29';
+
+/** Texto ao lado da caixa de consentimento da newsletter (LGPD Art. 7º, I e Art. 8º) */
+export const NEWSLETTER_CONSENT_TEXT =
+  'Quero receber por e-mail novidades do TerapiaInFoco e conteúdos sobre gestão de consultório e LGPD. ' +
+  'Posso sair da lista a qualquer momento pelo link no fim de cada e-mail.';
+
 /** Canal do encarregado de dados (LGPD Art. 41) e de contato geral */
 export const PRIVACY_CONTACT_EMAIL = 'dpo@terapiainfoco.com.br';
 

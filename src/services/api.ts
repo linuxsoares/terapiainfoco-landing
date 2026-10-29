@@ -1,4 +1,4 @@
-import type { CreateLeadDTO, ValidateDocumentResponse } from '../shared';
+import type { CreateLeadDTO, SubscribeNewsletterDTO, ValidateDocumentResponse } from '../shared';
 
 // Em produção a URL da API vem do build (VITE_API_URL); localhost só no desenvolvimento
 const configuredApiUrl = (import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3000/api' : '')).trim().replace(/\/+$/, '');
@@ -41,6 +41,12 @@ export const landingApi = {
   /** Pedido de acesso antecipado (formulário de demonstração) */
   async createLead(dto: CreateLeadDTO): Promise<void> {
     await fetchJson('/leads', { method: 'POST', body: JSON.stringify(dto) });
+  },
+
+  /** Inscrição na newsletter: devolve a mensagem de "confira seu e-mail" */
+  async subscribeNewsletter(dto: SubscribeNewsletterDTO): Promise<string> {
+    const res = await fetchJson<{ message?: string }>('/newsletter/subscribe', { method: 'POST', body: JSON.stringify(dto) });
+    return res.message || 'Enviamos um link de confirmação para o seu e-mail.';
   },
 
   /** Consulta pública de autenticidade documental via QR Code / token */
