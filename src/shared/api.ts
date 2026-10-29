@@ -13,6 +13,18 @@ export interface CreateLeadDTO {
   website?: string;
 }
 
+/** Inscrição na newsletter; a pessoa confirma pelo link enviado por e-mail */
+export interface SubscribeNewsletterDTO {
+  email: string;
+  name?: string;
+  source?: string;
+  consent: boolean;
+  /** Versão do texto de consentimento mostrado (NEWSLETTER_CONSENT_VERSION) */
+  consentVersion: string;
+  /** Campo invisível para pessoas: preenchido só por robôs */
+  website?: string;
+}
+
 export type DocumentType = 'DECLARACAO' | 'ATESTADO' | 'RELATORIO' | 'LAUDO';
 
 export interface IcpCertificateInfo {

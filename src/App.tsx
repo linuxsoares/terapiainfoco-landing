@@ -10,6 +10,7 @@ import { ComparisonTable } from './components/ComparisonTable';
 import { PricingSection } from './components/PricingSection';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
+import { NewsletterSection } from './components/NewsletterSection';
 import { LeadModal } from './components/LeadModal';
 import { FindTherapistSection } from './components/FindTherapistSection';
 import { ValidationPortal } from './components/ValidationPortal';
@@ -86,6 +87,9 @@ export function App() {
 
         {/* Regulatory & Technical FAQ */}
         <FaqSection onOpenDemo={handleOpenDemo} />
+
+        {/* Newsletter com dupla confirmação */}
+        <NewsletterSection />
       </main>
       )}
 
