@@ -11,7 +11,7 @@
  */
 
 /** Versão vigente (data de publicação) dos Termos de Uso e do Aviso de Privacidade */
-export const LEGAL_TERMS_VERSION = '2026-10-28';
+export const LEGAL_TERMS_VERSION = '2026-11-06';
 
 /** Versão vigente do texto de consentimento da newsletter; mudou o texto, muda a versão */
 export const NEWSLETTER_CONSENT_VERSION = '2026-10-29';
@@ -81,7 +81,7 @@ export const TERMS_OF_USE: LegalDocument = {
       heading: '6. Dados e sigilo',
       paragraphs: [
         'Os dados clínicos inseridos pelo psicólogo pertencem à relação entre psicólogo e paciente. A TerapiaInFoco trata esses dados apenas para prestar o serviço, conforme o Aviso de Privacidade, e não os usa para outra finalidade.',
-        'Prontuários são guardados pelo prazo mínimo de 5 anos exigido pela Resolução CFP nº 001/2009, mesmo após o encerramento da conta, salvo determinação legal diferente.'
+        'Prontuários são guardados por 20 anos após o último registro, mesmo após o encerramento da conta, salvo determinação legal diferente. É o prazo mais protetivo entre o mínimo de 5 anos da Resolução CFP nº 001/2009 (art. 4º) e os 20 anos da Lei nº 13.787/2018.'
       ]
     },
     {
@@ -132,7 +132,7 @@ export const PRIVACY_NOTICE: LegalDocument = {
       heading: '3. Para que usamos e com qual base legal',
       paragraphs: [
         'Prestar o serviço contratado (agenda, prontuário, documentos, lembretes): execução de contrato e, para dados de saúde, tutela da saúde por profissional de saúde (LGPD Art. 11, II, f).',
-        'Guardar o prontuário pelo prazo legal: cumprimento de obrigação legal e regulatória (Resolução CFP nº 001/2009).',
+        'Guardar o prontuário pelo prazo legal: cumprimento de obrigação legal e regulatória (Resolução CFP nº 001/2009 e Lei nº 13.787/2018).',
         'Transcrição e síntese por inteligência artificial: somente com consentimento específico do paciente, registrado por finalidade e revogável a qualquer momento; sem ele, o recurso fica bloqueado.',
         'Diário Guiado com inteligência artificial entre sessões: consentimento específico e em destaque dado pelo próprio paciente (LGPD Art. 11, I), revogável a qualquer momento; a equipe do consultório não pode aceitar por ele. O resumo e a conversa ficam disponíveis só para o psicólogo responsável. Mensagens que indiquem risco à vida mostram contatos de emergência e geram um aviso ao psicólogo (proteção da vida, LGPD Art. 11, II, e).',
         'Segurança, prevenção a fraudes e auditoria: legítimo interesse e cumprimento de obrigação legal.',
@@ -164,7 +164,7 @@ export const PRIVACY_NOTICE: LegalDocument = {
     {
       heading: '7. Por quanto tempo guardamos',
       paragraphs: [
-        'Prontuários e documentos clínicos: no mínimo 5 anos após o último atendimento (Resolução CFP nº 001/2009); depois, eliminação segura.',
+        'Prontuários e documentos clínicos: 20 anos após o último registro (Lei nº 13.787/2018, acima do mínimo de 5 anos da Resolução CFP nº 001/2009); depois, eliminação segura.',
         'Dados de conta: enquanto a conta estiver ativa e pelo prazo necessário para cumprir obrigações legais.',
         'Trilha de auditoria: guardada para comprovar a integridade dos registros e atender a fiscalizações.'
       ]
