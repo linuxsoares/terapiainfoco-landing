@@ -23,20 +23,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDemo }) => {
                 <span className="text-xl font-bold tracking-tight text-white font-sans">
                   Terapia<span className="text-teal-400">InFoco</span>
                 </span>
-                <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-teal-950 text-teal-400 border border-teal-800">
-                  RFC-001
-                </span>
               </div>
             </div>
 
             <p className="text-slate-400 leading-relaxed text-xs max-w-sm">
-              Plataforma de telepsicologia especializada que une teleconsulta própria sem gravação, transcrição clínica com diarização, notas SOAP assistidas por IA e Envelope Encryption nível LGPD.
+              Plataforma de telepsicologia especializada que une teleconsulta própria sem gravação, transcrição das sessões, rascunho de evolução SOAP com IA e prontuário cifrado conforme a LGPD.
             </p>
-
-            <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 text-[11px] text-slate-400 space-y-1">
-              <span className="text-teal-400 font-bold block">Documento de Origem:</span>
-              <p>RFC-001 (Versão 1.0.0 — Domínio Saúde Digital / Telepsicologia / Segurança & Compliance LGPD).</p>
-            </div>
           </div>
 
           {/* Column: Navegação */}
@@ -95,11 +87,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDemo }) => {
               </li>
               <li className="flex items-center gap-1.5">
                 <span className="text-teal-400">●</span>
-                <span>Resolução CFP nº 001/2009 (Guarda 5 Anos)</span>
+                <span>Resolução CFP nº 001/2009 (Prontuário)</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <span className="text-teal-400">●</span>
-                <span>Resolução CFP nº 004/2020 (Prontuário)</span>
+                <span>Lei nº 13.787/2018 (Guarda por 20 anos)</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <span className="text-teal-400">●</span>
@@ -114,23 +106,23 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDemo }) => {
             <ul className="space-y-2 text-slate-400">
               <li className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Envelope Encryption AES-256</span>
+                <span>Dados de saúde cifrados (AES-256-GCM)</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Google Cloud KMS / HSM</span>
+                <span>Chave mestra fora do banco de dados</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Zero Data Retention Policy</span>
+                <span>IA sem treino com seus dados</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Blind Indexing (HMAC-SHA256)</span>
+                <span>Busca por CPF sem CPF legível no banco</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Trilha de Auditoria WORM</span>
+                <span>Histórico de acessos à prova de alteração</span>
               </li>
             </ul>
           </div>

@@ -153,11 +153,11 @@ export const ValidationPortal: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Aviso Zero-Knowledge */}
+                {/* Aviso: validação sem expor o prontuário */}
                 <div className="p-3.5 rounded-xl bg-teal-500/10 border border-teal-500/20 text-xs text-teal-900 flex items-start gap-2.5">
                   <FileCheck2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
                   <p className="leading-relaxed">
-                    <strong>Validação Pública Zero-Knowledge:</strong> A autenticidade e o selo imutável foram verificados diretamente no ledger criptográfico sem expor o conteúdo clínico sigiloso ou o prontuário do paciente (Resolução CFP nº 001/2009).
+                    <strong>Validação sem expor o prontuário:</strong> a autenticidade e a integridade do documento foram conferidas sem mostrar o conteúdo clínico nem o prontuário do paciente.
                   </p>
                 </div>
               </div>

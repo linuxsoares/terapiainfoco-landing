@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
             {/* Top compliance badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100/70 border border-teal-200 text-teal-900 text-xs font-semibold shadow-xs">
               <ShieldCheck className="w-4 h-4 text-teal-600" />
-              <span>Conforme Resoluções CFP nº 011/2018 & 001/2009 • LGPD Art. 11</span>
+              <span>Feito para as normas do CFP e a LGPD</span>
             </div>
 
             {/* Main Headline */}
@@ -46,22 +46,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              A primeira plataforma de telepsicologia do Brasil com{' '}
-              <strong className="text-slate-900 font-semibold">teleconsulta própria sem gravação</strong>,{' '}
-              <strong className="text-slate-900 font-semibold">transcrição com diarização clínica</strong>,{' '}
-              geração assistida de notas <strong className="text-teal-700 font-semibold">SOAP</strong> e{' '}
-              <strong className="text-slate-900 font-semibold">Criptografia de Envelope (AES-256-GCM)</strong> em total consonância com as normas éticas do CFP.
+              Atenda online com sigilo, receba o{' '}
+              <strong className="text-teal-700 font-semibold">rascunho da evolução SOAP</strong> logo após a sessão e mantenha seu consultório{' '}
+              <strong className="text-slate-900 font-semibold">dentro das normas do CFP</strong>. Teleconsulta própria{' '}
+              <strong className="text-slate-900 font-semibold">sem gravação</strong>, prontuário cifrado e nenhuma nota registrada sem a sua revisão.
             </p>
 
             {/* Quick Proof Badges */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-y-2 gap-x-5 text-xs text-slate-600 pt-1 font-medium">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-teal-600" />
-                <span>Human-in-the-Loop Obrigatório</span>
+                <span>Você revisa tudo o que a IA escreve</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-teal-600" />
-                <span>Zero Data Retention em IA</span>
+                <span>Dados nunca usados para treinar IA</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-teal-600" />
@@ -109,8 +108,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
               </div>
               <div className="w-px h-8 bg-slate-200" />
               <div>
-                <p className="text-2xl font-bold text-slate-900 tracking-tight">5 Anos</p>
-                <p className="text-xs text-slate-500 font-medium">Guarda Legal CFP</p>
+                <p className="text-2xl font-bold text-slate-900 tracking-tight">20 Anos</p>
+                <p className="text-xs text-slate-500 font-medium">Guarda do prontuário</p>
               </div>
             </div>
 
@@ -148,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
                 <div className="text-right">
                   <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Áudio Diarizado
+                    Falas Identificadas
                   </span>
                   <p className="text-[10px] text-slate-400 mt-0.5">Consentimento OK</p>
                 </div>
@@ -179,10 +178,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-teal-900">
                     <Sparkles className="w-3.5 h-3.5 text-teal-600" />
-                    <span>Rascunho SOAP Gerado por IA Clínica (3.4s)</span>
+                    <span>Rascunho SOAP gerado por IA</span>
                   </div>
                   <span className="text-[10px] text-teal-700 font-medium bg-teal-100/70 px-2 py-0.5 rounded">
-                    Human-in-the-Loop
+                    Para sua revisão
                   </span>
                 </div>
 
@@ -206,7 +205,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
               <div className="pt-2 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
                   <Lock className="w-3.5 h-3.5 text-emerald-600" />
-                  <span>Criptografia AES-256-GCM ativa</span>
+                  <span>Prontuário cifrado</span>
                 </div>
 
                 {signedState ? (
@@ -228,7 +227,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
               {/* Floating Compliance Badge */}
               <div className="text-center pt-1">
                 <span className="text-[10px] text-slate-400 font-medium">
-                  🔒 Guarda imutável por 5 anos (Res. CFP nº 001/2009) em cofre WORM
+                  🔒 Depois de selado, o registro não muda e fica guardado por 20 anos
                 </span>
               </div>
 

@@ -33,11 +33,11 @@ export const FeatureModules: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-800 text-xs font-semibold">
             <Layers className="w-3.5 h-3.5 text-teal-600" />
-            <span>Arquitetura Funcional • Seção 3 do RFC-001</span>
+            <span>Agendar • Atender • Documentar</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            5 Módulos Integrados em um Fluxo Contínuo
+            Do Agendamento ao Documento, em um Só Lugar
           </h2>
 
           <p className="text-slate-600 text-base sm:text-lg">
@@ -205,10 +205,10 @@ export const FeatureModules: React.FC = () => {
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-teal-600" />
-                      <span className="text-sm font-bold text-slate-900">Pipeline de Diarização Clínica</span>
+                      <span className="text-sm font-bold text-slate-900">Transcrição por Participante</span>
                     </div>
                     <span className="text-xs text-teal-700 bg-teal-50 px-2 py-0.5 rounded font-bold">
-                      Zero Data Retention
+                      Sem treino de IA
                     </span>
                   </div>
 
