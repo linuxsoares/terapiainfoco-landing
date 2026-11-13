@@ -21,7 +21,7 @@ export const DocumentSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-semibold">
             <Award className="w-3.5 h-3.5 text-purple-600" />
-            <span>Resolução CFP nº 006/2019 • Módulo 5 do RFC-001</span>
+            <span>Resolução CFP nº 006/2019</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">

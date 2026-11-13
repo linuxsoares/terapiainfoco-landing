@@ -31,15 +31,15 @@ export const SecurityArchitecture: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-xs font-semibold">
             <Lock className="w-3.5 h-3.5" />
-            <span>Seção 4 do RFC-001 • Criptografia LGPD & Zero-Trust</span>
+            <span>Segurança & LGPD</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Nem Nós Conseguimos Ler as Sessões dos Seus Pacientes
+            Um Vazamento do Banco Não Expõe Seus Pacientes
           </h2>
 
           <p className="text-slate-400 text-base sm:text-lg">
-            Adotamos <strong>Envelope Encryption (AES-256-GCM)</strong> com chaves custodiadas em Hardware Security Module (HSM). Em caso de invasão ou vazamento de banco de dados, o invasor encontra apenas lixo ilegível.
+            Prontuários, nomes e CPFs são cifrados <strong>campo a campo (AES-256-GCM)</strong> antes de chegar ao banco, com a chave mestra guardada fora dele. Em caso de invasão ou vazamento do banco de dados, o invasor encontra apenas texto ilegível.
           </p>
         </div>
 
@@ -79,7 +79,7 @@ export const SecurityArchitecture: React.FC = () => {
                 Simulador de Segurança em Repouso
               </h4>
               <p className="text-xs sm:text-sm text-slate-400">
-                Alterne entre as perspectivas para entender o poder do Field-Level Encryption e Envelope Encryption.
+                Alterne entre as perspectivas para ver o que um invasor do banco enxerga e o que você enxerga.
               </p>
             </div>
 
@@ -150,7 +150,7 @@ export const SecurityArchitecture: React.FC = () => {
               </div>
 
               <p className="text-xs text-slate-400">
-                🛡️ Sem acesso à chave KEK custodiada no Hardware Security Module (KMS com MFA), os dados são matematicamente impossíveis de decodificar por força bruta.
+                🛡️ Sem a chave mestra, que fica fora do banco de dados, o conteúdo não pode ser decifrado.
               </p>
             </div>
           ) : (
@@ -229,7 +229,7 @@ export const SecurityArchitecture: React.FC = () => {
             </div>
           </div>
 
-          {/* CFP 5-Year Legal Retention vs LGPD Art. 18 */}
+          {/* Guarda legal do prontuário vs. pedido de exclusão (LGPD Art. 18) */}
           <div className="pt-6 border-t border-slate-800 bg-slate-950/60 p-5 rounded-2xl border border-slate-800/80">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="space-y-1">
@@ -238,11 +238,11 @@ export const SecurityArchitecture: React.FC = () => {
                   Harmonização Jurídica: LGPD Art. 16 vs. Resolução CFP nº 001/2009
                 </h5>
                 <p className="text-xs text-slate-400 max-w-3xl leading-relaxed">
-                  Se o paciente pedir exclusão total de dados (Direito ao Esquecimento - LGPD Art. 18), a lei ressalva o cumprimento de obrigação legal médica. O TerapiaInFoco anonimiza o cadastro ativo e tranca o prontuário em <strong>cofre criptográfico de quarentena por 5 anos</strong>, protegendo o psicólogo contra processos éticos no Conselho.
+                  Se o paciente pedir exclusão total de dados (Direito ao Esquecimento - LGPD Art. 18), a lei ressalva o cumprimento de obrigação legal. O TerapiaInFoco anonimiza o cadastro ativo e mantém o prontuário cifrado e bloqueado pelo <strong>prazo legal de 20 anos</strong> (Lei nº 13.787/2018), para o psicólogo cumprir a guarda exigida.
                 </p>
               </div>
               <span className="px-3 py-1.5 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs font-bold shrink-0">
-                Guarda de 5 anos
+                Guarda de 20 anos
               </span>
             </div>
           </div>

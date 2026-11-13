@@ -71,7 +71,7 @@ export const AiSoapSimulator: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-teal-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Módulo 3 • Pipeline de Transcrição & Diarização Clínica</span>
+            <span>Experimente • Transcrição e rascunho SOAP</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
@@ -189,7 +189,7 @@ export const AiSoapSimulator: React.FC = () => {
               <div className="flex items-center justify-between mb-2">
                 <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
                   <Activity className="w-3.5 h-3.5 text-teal-400" />
-                  Transcrição com Diarização de Voz
+                  Transcrição por participante
                 </h4>
                 <span className="text-[10px] text-slate-400 font-mono">TLS 1.3 • AES-256</span>
               </div>
@@ -284,13 +284,13 @@ export const AiSoapSimulator: React.FC = () => {
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
-                  Notas Privadas (§3.4)
+                  Notas Privadas
                 </button>
               </div>
 
               <div className="flex items-center gap-1.5 text-xs text-teal-400 bg-teal-950/80 px-2.5 py-1 rounded-md border border-teal-800/80">
                 <ShieldAlert className="w-3.5 h-3.5 text-teal-400" />
-                <span className="font-semibold">Human-in-the-Loop Obrigatório</span>
+                <span className="font-semibold">Revisão obrigatória pelo psicólogo</span>
               </div>
             </div>
 
@@ -377,7 +377,7 @@ export const AiSoapSimulator: React.FC = () => {
                 <div className="p-3.5 rounded-xl bg-amber-950/40 border border-amber-800/50 text-xs text-amber-200 space-y-1">
                   <p className="font-bold flex items-center gap-1.5">
                     <Lock className="w-3.5 h-3.5 text-amber-400" />
-                    Segregação Legal: Anotações Reflexivas do Terapeuta (§3.4)
+                    Segregação Legal: Anotações Reflexivas do Terapeuta
                   </p>
                   <p className="text-amber-300/80">
                     Estas anotações <strong>NÃO integram o prontuário oficial</strong>. O paciente tem direito legal de acesso ao prontuário (SOAP), mas suas hipóteses íntimas e impressões reflexivas permanecem estritamente no seu cofre pessoal.
@@ -414,7 +414,7 @@ export const AiSoapSimulator: React.FC = () => {
                 ) : (
                   <p className="flex items-center gap-1 text-[11px]">
                     <Info className="w-3.5 h-3.5 text-slate-400" />
-                    Ao selar, o registro torna-se somente-leitura (append-only) com guarda de 5 anos.
+                    Ao selar, o registro passa a ser somente leitura e fica guardado por 20 anos.
                   </p>
                 )}
               </div>

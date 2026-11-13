@@ -112,37 +112,10 @@ export const THERAPY_CASES: TherapyCase[] = [
   }
 ];
 
-export const COMPLIANCE_PILLARS = [
-  {
-    title: 'Resolução CFP nº 011/2018',
-    subtitle: 'Telepsicologia & e-Psi',
-    description: 'Ambiente tecnológico auditado e criptografado que atende estritamente às exigências do Conselho Federal de Psicologia para atendimento online.',
-    icon: 'ShieldCheck'
-  },
-  {
-    title: 'Resolução CFP nº 006/2019',
-    subtitle: 'Documentos Psicológicos',
-    description: 'Emissão parametrizada de Atestados, Declarações, Relatórios e Laudos com estrutura formal obrigatória, assinatura eletrônica e validação pública via QR Code.',
-    icon: 'FileText'
-  },
-  {
-    title: 'Resolução CFP nº 001/2009',
-    subtitle: 'Guarda Obrigatória de 5 Anos',
-    description: 'Armazenamento imutável (append-only) e cofre criptográfico que assegura a retenção legal mínima de 5 anos mesmo em caso de cancelamento da conta.',
-    icon: 'Lock'
-  },
-  {
-    title: 'LGPD Art. 5º, 11 e 16',
-    subtitle: 'Proteção a Dados de Saúde Sensíveis',
-    description: 'Envelope Encryption com DEK única por paciente, blind indexing para anonimização em buscas e quarentena criptográfica em solicitações de esquecimento.',
-    icon: 'Key'
-  }
-];
-
 export const RFC_MODULES = [
   {
     id: 'modulo-1',
-    badge: 'Módulo 1 • RFC-001 §3.1',
+    badge: 'Etapa 1 • Agendar',
     title: 'Agenda Inteligente & Redução de Faltas',
     description: 'Controle completo da sua grade clínica com buffers entre sessões, agendamento recorrente e lembretes por e-mail com confirmação de presença.',
     highlights: [
@@ -155,7 +128,7 @@ export const RFC_MODULES = [
   },
   {
     id: 'modulo-2',
-    badge: 'Módulo 2 • RFC-001 §3.2',
+    badge: 'Etapa 2 • Atender',
     title: 'Teleconsulta Própria, sem Gravação',
     description: 'Sala de vídeo da própria plataforma, criada para cada consulta: só o psicólogo e o paciente da sessão entram, nada é gravado e a transcrição alimenta o prontuário.',
     highlights: [
@@ -164,37 +137,37 @@ export const RFC_MODULES = [
       'Sem gravação de áudio ou vídeo: só a transcrição da fala segue para o prontuário',
       'Acesso seguro e sem necessidade de instalação de aplicativos pesados pelo paciente'
     ],
-    tag: 'WebRTC ponta a ponta'
+    tag: 'Vídeo criptografado'
   },
   {
     id: 'modulo-3',
-    badge: 'Módulo 3 • RFC-001 §3.3',
-    title: 'Transcrição, Diarização & SOAP com IA',
+    badge: 'Etapa 3 • Transcrever',
+    title: 'Transcrição & Rascunho SOAP com IA',
     description: 'Capture as falas com consentimento verificado, separe com precisão quem é psicólogo e quem é paciente, e receba um rascunho de nota SOAP em segundos.',
     highlights: [
-      'Diarização clínica precisa: segrega [TERAPEUTA] de [PACIENTE]',
+      'Separa automaticamente a fala do psicólogo e a do paciente',
       'Estruturação automática nos 4 eixos clínicos: Subjetivo, Objetivo, Avaliação e Plano',
-      'Human-in-the-Loop Obrigatório: o psicólogo sempre revisa, edita e assina',
-      'Política Zero Data Retention: seus dados de sessão NUNCA são usados para treinar modelos'
+      'Você sempre revisa, edita e assina: a IA não registra nada sozinha',
+      'Nome, CPF e contatos saem do texto antes da IA, e os dados nunca são usados para treinar modelos'
     ],
-    tag: 'Human-in-the-Loop'
+    tag: 'Revisado por você'
   },
   {
     id: 'modulo-4',
-    badge: 'Módulo 4 • RFC-001 §3.4',
+    badge: 'Etapa 4 • Registrar',
     title: 'Prontuário Imutável & Notas Confidenciais',
     description: 'Registro cronológico inviolável com separação legal entre o prontuário oficial (direito do paciente) e as impressões reflexivas privadas do terapeuta.',
     highlights: [
       'Registros "append-only": correções feitas via termos de retificação averbados',
       'Segregação lógica entre notas de trabalho reflexivas e prontuário documental',
       'Ficha de admissão e anamnese biopsicossocial completa',
-      'Trilha de auditoria (Audit Trail) com registro WORM de qualquer visualização ou edição'
+      'Histórico de quem abriu ou alterou cada registro, protegido contra adulteração'
     ],
     tag: 'CFP Compliance'
   },
   {
     id: 'modulo-5',
-    badge: 'Módulo 5 • RFC-001 §3.5',
+    badge: 'Etapa 5 • Emitir documentos',
     title: 'Emissão de Laudos & Validação Pública QR Code',
     description: 'Crie documentos oficiais conforme a Resolução CFP nº 006/2019 com assinatura eletrônica e token público para terceiros validarem autenticidade.',
     highlights: [
@@ -216,26 +189,26 @@ export const SECURITY_ARCHITECTURE_STEPS = [
   },
   {
     step: '2. Envelope Encryption',
-    title: 'KEK em HSM + DEK por Paciente',
-    desc: 'A KEK mestre reside no Hardware Security Module (KMS). Para cada paciente é criada uma Data Encryption Key (DEK) única em AES-256-GCM.',
+    title: 'Chave Mestra + Chave por Paciente',
+    desc: 'A chave mestra fica fora do banco de dados. Cada paciente tem a própria chave de dados (AES-256-GCM), protegida por ela.',
     sub: 'Camada Criptográfica'
   },
   {
     step: '3. Field-Level Encryption',
     title: 'Colunas de PII e Prontuários Encriptadas',
-    desc: 'Nem invasores nem DBAs com acesso direto ao banco PostgreSQL conseguem ler nomes, CPFs, áudios ou notas SOAP.',
+    desc: 'Quem tiver acesso direto ao banco de dados não consegue ler nomes, CPFs ou notas SOAP.',
     sub: 'Camada de Banco'
   },
   {
     step: '4. Blind Indexing',
     title: 'Buscas por HMAC-SHA256',
-    desc: 'Pesquise pacientes por CPF ou e-mail com segurança matemática absoluta, sem jamais armazenar ou indexar dados em texto claro.',
+    desc: 'Pesquise pacientes por CPF ou e-mail sem que esses dados fiquem legíveis ou indexados em texto claro.',
     sub: 'Anonimização Matemática'
   },
   {
-    step: '5. Trilha WORM',
-    title: 'Auditoria Inviolável de Acesso',
-    desc: 'Cada leitura, descriptografia ou exportação é gravada em armazenamento Write-Once-Read-Many com bloqueio temporal contra exclusão.',
+    step: '5. Trilha de Acessos',
+    title: 'Histórico à Prova de Alteração',
+    desc: 'Cada leitura, decifragem ou exportação entra numa trilha encadeada por hash: qualquer alteração ou exclusão posterior fica evidente.',
     sub: 'Compliance & Auditoria'
   }
 ];
@@ -300,21 +273,21 @@ export const COMPARISON_DATA = [
     iaGenerica: false
   },
   {
-    feature: 'Envelope Encryption (AES-256-GCM + KMS) para Saúde',
+    feature: 'Prontuário e dados do paciente cifrados',
     terapiaInFoco: true,
     whatsappZoom: false,
     prontuarioGenerico: false,
     iaGenerica: false
   },
   {
-    feature: 'Diarização Clínica Automática ([Terapeuta] vs [Paciente])',
+    feature: 'Transcrição que separa psicólogo e paciente',
     terapiaInFoco: true,
     whatsappZoom: false,
     prontuarioGenerico: false,
     iaGenerica: 'Genérica'
   },
   {
-    feature: 'Rascunho SOAP com Human-in-the-Loop Obrigatório',
+    feature: 'Rascunho SOAP revisado e assinado por você',
     terapiaInFoco: true,
     whatsappZoom: false,
     prontuarioGenerico: false,
@@ -328,7 +301,7 @@ export const COMPARISON_DATA = [
     iaGenerica: false
   },
   {
-    feature: 'Guarda Legal de 5 Anos CFP vs Quarentena LGPD Art. 16',
+    feature: 'Guarda legal de 20 anos com pedido de exclusão LGPD',
     terapiaInFoco: true,
     whatsappZoom: false,
     prontuarioGenerico: false,
@@ -354,7 +327,7 @@ export const FAQS = [
   {
     category: 'Ética & CFP',
     question: 'O Conselho Federal de Psicologia permite o uso de IA e transcrição em sessões?',
-    answer: 'Sim, desde que observadas as Resoluções CFP nº 011/2018 (Telepsicologia) e o Código de Ética Profissional (Art. 9º sobre sigilo). O TerapiaInFoco foi concebido estritamente dentro da lei: 1) O paciente assina termo de consentimento livre e esclarecido explícito; 2) A IA atua unicamente como assistente de transcrição e formatação SOAP; 3) O princípio de "Human-in-the-Loop" é compulsório — nenhuma nota clínica é registrada ou assinada sem a conferência, edição e validação manual do psicólogo.'
+    answer: 'Sim, desde que observadas as Resoluções CFP nº 011/2018 (Telepsicologia) e o Código de Ética Profissional (Art. 9º sobre sigilo). O TerapiaInFoco foi concebido estritamente dentro da lei: 1) O paciente assina termo de consentimento livre e esclarecido explícito; 2) A IA atua unicamente como assistente de transcrição e formatação SOAP; 3) A revisão humana é obrigatória: nenhuma nota clínica é registrada ou assinada sem a conferência, edição e validação manual do psicólogo.'
   },
   {
     category: 'Segurança & LGPD',
@@ -364,12 +337,12 @@ export const FAQS = [
   {
     category: 'Segurança & LGPD',
     question: 'O que ocorre se o paciente solicitar exclusão de dados com base na LGPD (Art. 18)?',
-    answer: 'O TerapiaInFoco implementa o fluxo de Quarentena e Harmonização Legal previsto no RFC-001: o direito ao esquecimento da LGPD encontra limite no cumprimento de obrigação legal do CFP (Resolução nº 001/2009 exige guarda de 5 anos). Quando o paciente solicita exclusão, o sistema anonimiza/pseudonimiza os dados de contato ativos e coloca o prontuário em cofre criptográfico trancado até o cumprimento do prazo de 5 anos, garantindo a proteção jurídica do psicólogo.'
+    answer: 'O direito à exclusão da LGPD tem limite no cumprimento de obrigação legal: o prontuário precisa ser guardado (Resolução CFP nº 001/2009 e Lei nº 13.787/2018, que prevê 20 anos após o último registro). Quando o paciente pede exclusão, o TerapiaInFoco remove os dados de contato ativos e mantém o prontuário cifrado e bloqueado até o fim do prazo de guarda, quando ele é eliminado com registro da destruição.'
   },
   {
     category: 'Teleconsulta & Prática',
     question: 'Por que a teleconsulta acontece em uma sala própria e não no Google Meet ou Zoom?',
-    answer: 'Conforme o ADR-005 do nosso RFC, a sessão acontece em uma sala própria (WebRTC ponta a ponta), criada para cada consulta: só entram o psicólogo e o paciente daquela sessão, com sala de espera, e nenhuma gravação de áudio ou vídeo é feita. A fala é transcrita durante a sessão e o áudio é descartado logo em seguida, então os dados de saúde não passam por ferramentas de videoconferência de terceiros.'
+    answer: 'A sessão acontece em uma sala própria (WebRTC ponta a ponta), criada para cada consulta: só entram o psicólogo e o paciente daquela sessão, com sala de espera, e nenhuma gravação de áudio ou vídeo é feita. A fala é transcrita durante a sessão e o áudio é descartado logo em seguida, então os dados de saúde não passam por ferramentas de videoconferência de terceiros.'
   },
   {
     category: 'Prontuário & Documentos',
@@ -389,11 +362,11 @@ export const PRICING_PLANS = [
     features: [
       'Até 40 sessões por mês',
       'Sala de teleconsulta própria com link automático',
-      'Transcrição & Diarização com IA (20 horas/mês)',
-      'Geração de notas SOAP com Human-in-the-Loop',
+      'Transcrição com IA (20 horas/mês)',
+      'Rascunho de notas SOAP revisado por você',
       'Prontuário eletrônico imutável (CFP nº 001/2009)',
       'Lembretes automáticos por e-mail',
-      'Criptografia AES-256-GCM ponta a ponta',
+      'Prontuário e dados do paciente cifrados',
       'Suporte via chat prioritário'
     ],
     cta: 'Começar Teste de 14 Dias'
@@ -409,12 +382,12 @@ export const PRICING_PLANS = [
     features: [
       'Sessões ilimitadas',
       'Teleconsulta ilimitada com sala de espera',
-      'Transcrição & Diarização com IA ilimitada',
+      'Transcrição com IA ilimitada',
       'Geração avançada SOAP com comparação de sessões',
       'Emissão de Atestados, Laudos e Declarações (CFP 006/2019)',
       'Assinatura eletrônica com validação por QR Code',
-      'Cofre de guarda legal de 5 anos & Quarentena LGPD',
-      'Blind Indexing & Trilha de Auditoria WORM',
+      'Guarda legal de 20 anos e pedidos de exclusão LGPD',
+      'Histórico de acessos à prova de alteração',
       'Suporte VIP via WhatsApp dedicado'
     ],
     cta: 'Garantir Desconto de Lançamento'

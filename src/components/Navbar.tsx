@@ -39,12 +39,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
                 <span className="text-xl font-bold tracking-tight text-slate-900 font-sans">
                   Terapia<span className="text-teal-600">InFoco</span>
                 </span>
-                <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-teal-50 text-teal-700 border border-teal-200/70">
-                  RFC-001
-                </span>
               </div>
               <p className="text-[11px] text-slate-500 hidden sm:block">
-                Telepsicologia • IA Clínica • Criptografia LGPD
+                Teleconsulta • Prontuário • Evolução com IA
               </p>
             </div>
           </a>

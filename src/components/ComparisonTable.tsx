@@ -104,7 +104,7 @@ export const ComparisonTable: React.FC = () => {
                         </span>
                       ) : row.iaGenerica === 'Genérica' ? (
                         <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 text-slate-600">
-                          Sem Diarização
+                          Não separa falas
                         </span>
                       ) : (
                         <span className="w-6 h-6 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center">
@@ -123,7 +123,7 @@ export const ComparisonTable: React.FC = () => {
         <div className="mt-6 p-4 rounded-2xl bg-amber-50 border border-amber-200/80 text-xs text-amber-900 flex items-start gap-3">
           <ShieldAlert className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
           <p className="leading-relaxed">
-            <strong>Atenção Ética:</strong> Colocar relatos ou áudios de pacientes em ferramentas de IA gratuitas ou sem acordo de confidencialidade com Zero Retention viola frontalmente o <strong>Art. 9º do Código de Ética Profissional do Psicólogo</strong> e o <strong>Art. 11 da LGPD</strong>, ensejando processos no CRP e sanções civis. O TerapiaInFoco é blindado contratualmente e criptograficamente para seu total resguardo.
+            <strong>Atenção Ética:</strong> Colocar relatos ou áudios de pacientes em ferramentas de IA gratuitas ou sem contrato que proíba o uso dos dados para treinar modelos viola frontalmente o <strong>Art. 9º do Código de Ética Profissional do Psicólogo</strong> e o <strong>Art. 11 da LGPD</strong>, ensejando processos no CRP e sanções civis. No TerapiaInFoco, o texto só vai à IA com o consentimento do paciente, sem nome, CPF e contatos, e sob contrato que proíbe o treino de modelos.
           </p>
         </div>
 
