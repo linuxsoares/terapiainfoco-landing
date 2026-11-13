@@ -34,12 +34,12 @@ export const DocumentSection: React.FC = () => {
         </div>
 
         {/* Document Tabs */}
-        <div className="mt-12 flex items-center justify-center gap-3">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
           {DOCUMENT_TEMPLATES.map((doc) => (
             <button
               key={doc.id}
               onClick={() => setSelectedDocId(doc.id)}
-              className={`px-5 py-3 rounded-xl font-bold text-sm transition-all cursor-pointer ${
+              className={`px-3.5 sm:px-5 py-2.5 sm:py-3 rounded-xl font-bold text-sm transition-all cursor-pointer ${
                 selectedDocId === doc.id
                   ? 'bg-purple-600 text-white shadow-lg shadow-purple-600/25 ring-2 ring-purple-500'
                   : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
