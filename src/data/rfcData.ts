@@ -117,11 +117,11 @@ export const RFC_MODULES = [
     id: 'modulo-1',
     badge: 'Etapa 1 • Agendar',
     title: 'Agenda Inteligente & Redução de Faltas',
-    description: 'Controle completo da sua grade clínica com buffers entre sessões, agendamento recorrente e lembretes por e-mail com confirmação de presença.',
+    description: 'Controle completo da sua grade clínica com intervalo entre sessões, agendamento recorrente e lembretes por e-mail com confirmação de presença.',
     highlights: [
       'Lembrete automático por e-mail 48h antes, com confirmar ou cancelar pelo link',
       'Políticas configuráveis de cancelamento prévio (ex: mínimo 24h)',
-      'Intervalo inteligente de respiro (buffer de 10-15 min) entre atendimentos',
+      'Intervalo entre sessões (10 a 15 min) para você respirar entre um atendimento e outro',
       'Fluxo de estados da sessão: Solicitada, Confirmada, Em Andamento e Concluída'
     ],
     tag: 'Redução de No-show'
