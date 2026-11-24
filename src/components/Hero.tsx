@@ -47,7 +47,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Atenda online com sigilo, receba o{' '}
-              <strong className="text-teal-700 font-semibold">rascunho da evolução SOAP</strong> logo após a sessão e mantenha seu consultório{' '}
+              <strong className="text-teal-700 font-semibold">rascunho da evolução clínica</strong> logo após a sessão e mantenha seu consultório{' '}
               <strong className="text-slate-900 font-semibold">dentro das normas do CFP</strong>. Teleconsulta própria{' '}
               <strong className="text-slate-900 font-semibold">sem gravação</strong>, prontuário cifrado e nenhuma nota registrada sem a sua revisão.
             </p>
@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
               </div>
               <div className="w-px h-8 bg-slate-200" />
               <div>
-                <p className="text-2xl font-bold text-teal-700 tracking-tight">SOAP</p>
+                <p className="text-2xl font-bold text-teal-700 tracking-tight">IA</p>
                 <p className="text-xs text-slate-500 font-medium">Rascunho por IA, revisado por você</p>
               </div>
               <div className="w-px h-8 bg-slate-200" />
@@ -178,7 +178,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onExploreSimulator }) =>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-xs font-bold text-teal-900">
                     <Sparkles className="w-3.5 h-3.5 text-teal-600" />
-                    <span>Rascunho SOAP gerado por IA</span>
+                    <span>Rascunho da evolução gerado por IA</span>
                   </div>
                   <span className="text-[10px] text-teal-700 font-medium bg-teal-100/70 px-2 py-0.5 rounded">
                     Para sua revisão

@@ -83,13 +83,13 @@ export const DocumentSection: React.FC = () => {
                 <div className="flex items-start gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    <strong>Assinatura eletrônica:</strong> registra quem assinou, quando e o hash do documento. Assinatura com certificado ICP-Brasil em breve.
+                    <strong>Assinatura eletrônica:</strong> registra quem assinou, quando, e um código que comprova que o documento não foi alterado. Assinatura com certificado ICP-Brasil em breve.
                   </span>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                   <span>
-                    <strong>Token de Validação Pública:</strong> Empresas e juízos podem checar a validade sem acessar o prontuário.
+                    <strong>Código de Validação Pública:</strong> Empresas e juízos podem checar a validade sem acessar o prontuário.
                   </span>
                 </div>
               </div>
@@ -218,7 +218,7 @@ export const DocumentSection: React.FC = () => {
 
             <div className="text-xs text-slate-600 space-y-1.5 bg-slate-50 p-3 rounded-xl border border-slate-200">
               <p><strong>Tipo:</strong> Atestado Psicológico</p>
-              <p><strong>Hash do Documento:</strong> <code className="font-mono text-[10px]">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></p>
+              <p><strong>Código de verificação:</strong> <code className="font-mono text-[10px]">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</code></p>
               <p><strong>Sigilo Garantido:</strong> O prontuário clínico e as transcrições das sessões permanecem trancados e inacessíveis a terceiros.</p>
             </div>
 

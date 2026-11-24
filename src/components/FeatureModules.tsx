@@ -110,7 +110,7 @@ export const FeatureModules: React.FC = () => {
                 <span>•</span>
                 <div className="flex items-center gap-1.5">
                   <Lock className="w-4 h-4 text-teal-600" />
-                  <span>Criptografia de Campo (FLE)</span>
+                  <span>Dados criptografados</span>
                 </div>
               </div>
             </div>
@@ -225,7 +225,7 @@ export const FeatureModules: React.FC = () => {
 
                   <div className="p-3 rounded-xl bg-slate-900 text-white text-xs space-y-1">
                     <div className="flex items-center justify-between text-teal-400 font-bold text-[11px]">
-                      <span>Rascunho SOAP em 3.2s</span>
+                      <span>Rascunho da evolução em 3,2s</span>
                       <span>100% Auditável</span>
                     </div>
                     <p className="text-slate-300 text-[11px]">
@@ -285,7 +285,7 @@ export const FeatureModules: React.FC = () => {
                   <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-bold text-slate-900">ATESTADO PSICOLÓGICO</span>
-                      <span className="text-[10px] text-slate-500 font-mono">Token: 8b22-c0a1</span>
+                      <span className="text-[10px] text-slate-500 font-mono">Código: 8b22-c0a1</span>
                     </div>
 
                     <div className="h-2 bg-slate-200 rounded w-full"></div>
@@ -298,7 +298,7 @@ export const FeatureModules: React.FC = () => {
                         <span>Validação Pública Sem Expor Prontuário</span>
                       </div>
                       <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-bold">
-                        PAdES Válido
+                        Assinatura válida
                       </span>
                     </div>
                   </div>

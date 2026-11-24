@@ -71,7 +71,7 @@ export const AiSoapSimulator: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-950/80 border border-teal-500/30 text-teal-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Experimente • Transcrição e rascunho SOAP</span>
+            <span>Experimente • Transcrição e rascunho da evolução</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
@@ -79,7 +79,7 @@ export const AiSoapSimulator: React.FC = () => {
           </h2>
 
           <p className="text-slate-400 text-base sm:text-lg">
-            Veja como a plataforma transcreve a teleconsulta em tempo real (sem gravar o áudio), separa as vozes e gera um rascunho SOAP rigoroso para sua validação humana imediata.
+            Veja como a plataforma transcreve a teleconsulta em tempo real (sem gravar o áudio), separa as falas e gera um rascunho da evolução clínica para você revisar na hora.
           </p>
         </div>
 
@@ -191,7 +191,7 @@ export const AiSoapSimulator: React.FC = () => {
                   <Activity className="w-3.5 h-3.5 text-teal-400" />
                   Transcrição por participante
                 </h4>
-                <span className="text-[10px] text-slate-400 font-mono">TLS 1.3 • AES-256</span>
+                <span className="text-[10px] text-slate-400 font-mono">Conexão criptografada</span>
               </div>
 
               <div className="space-y-2.5 max-h-64 overflow-y-auto pr-1 text-xs">
@@ -233,7 +233,7 @@ export const AiSoapSimulator: React.FC = () => {
               }`}
             >
               <Sparkles className="w-4 h-4" />
-              <span>{isProcessing ? 'Processando com IA Clínica...' : 'Re-analisar e Gerar SOAP com IA'}</span>
+              <span>{isProcessing ? 'Processando com IA Clínica...' : 'Gerar rascunho da evolução com IA'}</span>
             </button>
 
             {/* Stepper info during processing */}
@@ -245,11 +245,11 @@ export const AiSoapSimulator: React.FC = () => {
                 </div>
                 <div className={`flex items-center gap-2 ${processStep >= 2 ? 'text-teal-400' : 'text-slate-500'}`}>
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>2. Separação das falas e criptografia (AES-256)</span>
+                  <span>2. Separação das falas e criptografia</span>
                 </div>
                 <div className={`flex items-center gap-2 ${processStep >= 3 ? 'text-teal-400' : 'text-slate-500'}`}>
                   <CheckCircle2 className="w-3.5 h-3.5" />
-                  <span>3. Rascunho SOAP por IA, sem nome, CPF ou contatos do paciente</span>
+                  <span>3. Rascunho da evolução por IA, sem nome, CPF ou contatos do paciente</span>
                 </div>
                 <div className={`flex items-center gap-2 ${processStep >= 4 ? 'text-teal-400' : 'text-slate-500'}`}>
                   <CheckCircle2 className="w-3.5 h-3.5" />
@@ -274,7 +274,7 @@ export const AiSoapSimulator: React.FC = () => {
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
-                  Evolução SOAP (Prontuário)
+                  Evolução Clínica (Prontuário)
                 </button>
                 <button
                   onClick={() => setActiveTab('private')}
@@ -380,7 +380,7 @@ export const AiSoapSimulator: React.FC = () => {
                     Segregação Legal: Anotações Reflexivas do Terapeuta
                   </p>
                   <p className="text-amber-300/80">
-                    Estas anotações <strong>NÃO integram o prontuário oficial</strong>. O paciente tem direito legal de acesso ao prontuário (SOAP), mas suas hipóteses íntimas e impressões reflexivas permanecem estritamente no seu cofre pessoal.
+                    Estas anotações <strong>NÃO integram o prontuário oficial</strong>. O paciente tem direito legal de acesso ao prontuário, mas suas hipóteses íntimas e impressões reflexivas permanecem estritamente no seu cofre pessoal.
                   </p>
                 </div>
 
@@ -405,10 +405,10 @@ export const AiSoapSimulator: React.FC = () => {
                   <div className="space-y-0.5">
                     <p className="text-emerald-400 font-bold flex items-center gap-1.5">
                       <Award className="w-4 h-4 text-emerald-400" />
-                      Prontuário Imutável Selado (hash SHA-256)
+                      Prontuário assinado — não pode mais ser alterado
                     </p>
                     <p className="text-[11px] text-slate-400 font-mono">
-                      SHA256: 7f8a9b22...c41e • Timestamp: {new Date().toLocaleTimeString()} • CRP 06/142980
+                      Código de verificação: 7f8a9b22...c41e • Assinado às {new Date().toLocaleTimeString()} • CRP 06/142980
                     </p>
                   </div>
                 ) : (

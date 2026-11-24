@@ -39,7 +39,7 @@ export const SecurityArchitecture: React.FC = () => {
           </h2>
 
           <p className="text-slate-400 text-base sm:text-lg">
-            Prontuários, nomes e CPFs são cifrados <strong>campo a campo (AES-256-GCM)</strong> antes de chegar ao banco, com a chave mestra guardada fora dele. Em caso de invasão ou vazamento do banco de dados, o invasor encontra apenas texto ilegível.
+            Prontuários, nomes e CPFs são <strong>criptografados um a um</strong> antes de chegar ao banco, com a chave mestra guardada fora dele. Em caso de invasão ou vazamento do banco de dados, o invasor encontra apenas texto ilegível.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export const SecurityArchitecture: React.FC = () => {
             <div>
               <h4 className="text-xl font-bold text-white flex items-center gap-2">
                 <Terminal className="w-5 h-5 text-teal-400" />
-                Simulador de Segurança em Repouso
+                Simulador: o que cada um enxerga
               </h4>
               <p className="text-xs sm:text-sm text-slate-400">
                 Alterne entre as perspectivas para ver o que um invasor do banco enxerga e o que você enxerga.
@@ -94,7 +94,7 @@ export const SecurityArchitecture: React.FC = () => {
                 }`}
               >
                 <EyeOff className="w-4 h-4 text-red-400" />
-                <span>Visão do Invasor / DBA do Banco</span>
+                <span>O que um invasor vê</span>
               </button>
 
               <button
@@ -106,7 +106,7 @@ export const SecurityArchitecture: React.FC = () => {
                 }`}
               >
                 <Eye className="w-4 h-4 text-teal-400" />
-                <span>Visão do Terapeuta Autenticado</span>
+                <span>O que você vê</span>
               </button>
             </div>
           </div>
@@ -117,7 +117,7 @@ export const SecurityArchitecture: React.FC = () => {
               <div className="flex items-center gap-2 text-xs font-bold text-red-400 bg-red-950/40 border border-red-800/50 p-3 rounded-xl">
                 <AlertTriangle className="w-4 h-4 shrink-0" />
                 <span>
-                  O que um invasor com acesso root ao servidor ou dump SQL do PostgreSQL encontra:
+                  O que alguém que invadisse o servidor ou copiasse o banco de dados encontraria:
                 </span>
               </div>
 
@@ -158,25 +158,25 @@ export const SecurityArchitecture: React.FC = () => {
               <div className="flex items-center gap-2 text-xs font-bold text-teal-400 bg-teal-950/40 border border-teal-800/50 p-3 rounded-xl">
                 <CheckCircle className="w-4 h-4 shrink-0" />
                 <span>
-                  O que o psicólogo autenticado com token JWT + MFA e DEK em memória volátil visualiza:
+                  O que você vê depois de entrar com sua senha e a verificação em duas etapas:
                 </span>
               </div>
 
               <div className="bg-slate-950 rounded-2xl p-5 border border-slate-800 text-xs space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-3 border-b border-slate-800">
                   <div>
-                    <span className="text-slate-500 block text-[11px]">Paciente Decriptado:</span>
+                    <span className="text-slate-500 block text-[11px]">Paciente:</span>
                     <span className="text-white font-bold text-sm">Mariana Silva de Oliveira</span>
                   </div>
                   <div>
                     <span className="text-slate-500 block text-[11px]">CPF:</span>
-                    <span className="text-white font-mono">***.482.918-** (Decriptado em RAM)</span>
+                    <span className="text-white font-mono">***.482.918-**</span>
                   </div>
                 </div>
 
                 <div className="space-y-2 text-slate-300">
                   <span className="text-teal-400 font-bold block text-xs">
-                    Subjetivo (SOAP) Decriptado via AES-256-GCM:
+                    Evolução clínica — Subjetivo:
                   </span>
                   <p className="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-slate-200 leading-relaxed text-xs">
                     "Paciente relata melhora na modulação de crises de ansiedade após uso da respiração diafragmática durante situação ansiogênica corporativa..."
@@ -185,7 +185,7 @@ export const SecurityArchitecture: React.FC = () => {
               </div>
 
               <p className="text-xs text-teal-400">
-                ✨ A decriptação ocorre exclusivamente na memória volátil da sessão ativa e é descartada (secure wipe) após o término da requisição.
+                ✨ Os dados só ficam legíveis na sua tela, enquanto você está usando o sistema, e não são guardados abertos em lugar nenhum.
               </p>
             </div>
           )}
@@ -196,10 +196,10 @@ export const SecurityArchitecture: React.FC = () => {
               <div className="lg:col-span-5 space-y-2">
                 <h5 className="text-sm font-bold text-white flex items-center gap-1.5">
                   <Hash className="w-4 h-4 text-teal-400" />
-                  Blind Indexing: Pesquise sem Expor
+                  Busca por CPF sem expor o CPF
                 </h5>
                 <p className="text-xs text-slate-400">
-                  Como buscar um paciente por CPF sem deixar o CPF legível no banco de dados? Usamos HMAC-SHA256 com sal secreto:
+                  Como encontrar um paciente pelo CPF sem deixar o CPF legível no banco de dados? O sistema transforma o CPF em um código que não pode ser revertido:
                 </p>
                 <div className="pt-2">
                   <label className="text-[11px] font-semibold text-slate-400 block mb-1">
@@ -217,13 +217,13 @@ export const SecurityArchitecture: React.FC = () => {
 
               <div className="lg:col-span-7 bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-2 font-mono text-xs">
                 <span className="text-slate-500 text-[11px]">
-                  // Blind Index gerado instantaneamente no banco:
+                  // Código guardado no banco no lugar do CPF:
                 </span>
                 <div className="bg-slate-900 p-2.5 rounded border border-slate-800 text-teal-300 break-all text-[11px]">
                   {simulatedHash}
                 </div>
                 <p className="text-[11px] text-slate-400 font-sans">
-                  A consulta SQL faz <code className="text-teal-400">WHERE cpf_bindex = hash</code>. O invasor vê o hash, mas não consegue reverter para o CPF original do paciente.
+                  A busca compara códigos, não CPFs. Quem invadir o banco vê só o código e não consegue descobrir o CPF do paciente.
                 </p>
               </div>
             </div>
@@ -235,10 +235,10 @@ export const SecurityArchitecture: React.FC = () => {
               <div className="space-y-1">
                 <h5 className="text-sm font-bold text-emerald-400 flex items-center gap-2">
                   <FileKey className="w-4 h-4" />
-                  Harmonização Jurídica: LGPD Art. 16 vs. Resolução CFP nº 001/2009
+                  Pedido de exclusão x guarda do prontuário: LGPD Art. 16 e Resolução CFP nº 001/2009
                 </h5>
                 <p className="text-xs text-slate-400 max-w-3xl leading-relaxed">
-                  Se o paciente pedir exclusão total de dados (Direito ao Esquecimento - LGPD Art. 18), a lei ressalva o cumprimento de obrigação legal. O TerapiaInFoco anonimiza o cadastro ativo e mantém o prontuário cifrado e bloqueado pelo <strong>prazo legal de 20 anos</strong> (Lei nº 13.787/2018), para o psicólogo cumprir a guarda exigida.
+                  Se o paciente pedir exclusão total de dados (LGPD Art. 18), a lei ressalva o cumprimento de obrigação legal. O TerapiaInFoco anonimiza o cadastro ativo e mantém o prontuário cifrado e bloqueado pelo <strong>prazo legal de 20 anos</strong> (Lei nº 13.787/2018), para o psicólogo cumprir a guarda exigida.
                 </p>
               </div>
               <span className="px-3 py-1.5 rounded-lg bg-emerald-950 text-emerald-300 border border-emerald-800 text-xs font-bold shrink-0">

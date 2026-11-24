@@ -142,8 +142,8 @@ export const RFC_MODULES = [
   {
     id: 'modulo-3',
     badge: 'Etapa 3 • Transcrever',
-    title: 'Transcrição & Rascunho SOAP com IA',
-    description: 'Capture as falas com consentimento verificado, separe com precisão quem é psicólogo e quem é paciente, e receba um rascunho de nota SOAP em segundos.',
+    title: 'Transcrição & Rascunho da Evolução com IA',
+    description: 'Capture as falas com consentimento verificado, separe com precisão quem é psicólogo e quem é paciente, e receba um rascunho da evolução clínica em segundos.',
     highlights: [
       'Separa automaticamente a fala do psicólogo e a do paciente',
       'Estruturação automática nos 4 eixos clínicos: Subjetivo, Objetivo, Avaliação e Plano',
@@ -158,20 +158,20 @@ export const RFC_MODULES = [
     title: 'Prontuário Imutável & Notas Confidenciais',
     description: 'Registro cronológico inviolável com separação legal entre o prontuário oficial (direito do paciente) e as impressões reflexivas privadas do terapeuta.',
     highlights: [
-      'Registros "append-only": correções feitas via termos de retificação averbados',
+      'Nada é apagado nem sobrescrito: correções entram como termos de retificação',
       'Segregação lógica entre notas de trabalho reflexivas e prontuário documental',
       'Ficha de admissão e anamnese biopsicossocial completa',
       'Histórico de quem abriu ou alterou cada registro, protegido contra adulteração'
     ],
-    tag: 'CFP Compliance'
+    tag: 'Conforme o CFP'
   },
   {
     id: 'modulo-5',
     badge: 'Etapa 5 • Emitir documentos',
     title: 'Emissão de Laudos & Validação Pública QR Code',
-    description: 'Crie documentos oficiais conforme a Resolução CFP nº 006/2019 com assinatura eletrônica e token público para terceiros validarem autenticidade.',
+    description: 'Crie documentos oficiais conforme a Resolução CFP nº 006/2019 com assinatura eletrônica e um código público para terceiros conferirem a autenticidade.',
     highlights: [
-      'Templates estruturados: Declaração, Atestado, Relatório e Laudo Psicológico',
+      'Modelos prontos: Declaração, Atestado, Relatório e Laudo Psicológico',
       'Assinatura eletrônica (certificado ICP-Brasil em breve)',
       'Geração em PDF/A para preservação e integridade a longo prazo',
       'QR Code com verificação pública de integridade sem expor o prontuário sigiloso'
@@ -188,28 +188,28 @@ export const SECURITY_ARCHITECTURE_STEPS = [
     sub: 'Camada de Trânsito'
   },
   {
-    step: '2. Envelope Encryption',
+    step: '2. Chaves separadas',
     title: 'Chave Mestra + Chave por Paciente',
-    desc: 'A chave mestra fica fora do banco de dados. Cada paciente tem a própria chave de dados (AES-256-GCM), protegida por ela.',
+    desc: 'A chave mestra fica fora do banco de dados. Cada paciente tem a própria chave de dados, protegida por ela.',
     sub: 'Camada Criptográfica'
   },
   {
-    step: '3. Field-Level Encryption',
-    title: 'Colunas de PII e Prontuários Encriptadas',
-    desc: 'Quem tiver acesso direto ao banco de dados não consegue ler nomes, CPFs ou notas SOAP.',
+    step: '3. Campo a campo',
+    title: 'Dados Pessoais e Prontuários Criptografados',
+    desc: 'Quem tiver acesso direto ao banco de dados não consegue ler nomes, CPFs ou evoluções clínicas.',
     sub: 'Camada de Banco'
   },
   {
-    step: '4. Blind Indexing',
-    title: 'Buscas por HMAC-SHA256',
+    step: '4. Busca protegida',
+    title: 'Busca por CPF sem Expor o CPF',
     desc: 'Pesquise pacientes por CPF ou e-mail sem que esses dados fiquem legíveis ou indexados em texto claro.',
-    sub: 'Anonimização Matemática'
+    sub: 'Privacidade na Busca'
   },
   {
     step: '5. Trilha de Acessos',
     title: 'Histórico à Prova de Alteração',
-    desc: 'Cada leitura, decifragem ou exportação entra numa trilha encadeada por hash: qualquer alteração ou exclusão posterior fica evidente.',
-    sub: 'Compliance & Auditoria'
+    desc: 'Cada leitura, decifragem ou exportação entra num histórico encadeado: qualquer alteração ou exclusão posterior fica evidente.',
+    sub: 'Conformidade & Auditoria'
   }
 ];
 
@@ -227,7 +227,7 @@ export const DOCUMENT_TEMPLATES = [
       patient: 'Mariana Silva de Oliveira — CPF ***.482.918-**',
       body: 'Atesto, para os devidos fins de saúde ocupacional, que a paciente supra-identificada encontra-se em acompanhamento psicológico clínico sob meus cuidados profissionais desde 12/03/2026. A paciente apresenta sintomatologia compatível com sobrecarga adaptativa ocupacional, sendo recomendada a redução temporária de viagens a trabalho e concessão de 3 (três) dias de repouso para restauração psicossomática e continuidade das intervenções de manejo do estresse.',
       date: 'São Paulo, 26 de Setembro de 2026',
-      signature: 'Documento assinado eletronicamente • Token de Autenticidade: 8b22-c0a1-94d9'
+      signature: 'Documento assinado eletronicamente • Código de Autenticidade: 8b22-c0a1-94d9'
     }
   },
   {
@@ -243,7 +243,7 @@ export const DOCUMENT_TEMPLATES = [
       patient: 'Mariana Silva de Oliveira — CPF ***.482.918-**',
       body: 'Declaro, a pedido da parte interessada, que a sra. Mariana Silva de Oliveira compareceu à sessão de telepsicologia no dia 26/09/2026, no intervalo compreendido entre 14:00 e 14:50 horas, para atendimento clínico individualizado.',
       date: 'São Paulo, 26 de Setembro de 2026',
-      signature: 'Documento assinado eletronicamente • Token de Autenticidade: 4df1-e89a-77bc'
+      signature: 'Documento assinado eletronicamente • Código de Autenticidade: 4df1-e89a-77bc'
     }
   },
   {
@@ -259,7 +259,7 @@ export const DOCUMENT_TEMPLATES = [
       patient: 'Mariana Silva de Oliveira — CPF ***.482.918-**',
       body: '1. IDENTIFICAÇÃO DO PROCESSO: Avaliação de acompanhamento em psicoterapia breve. 2. DESCRIÇÃO DA DEMANDA: Queixa de episódios de taquicardia situacional e pensamentos intrusivos em reuniões corporativas. 3. PROCEDIMENTO: Realizadas 8 sessões estruturadas baseadas na TCC, com treino de respiração e diário de pensamentos. 4. ANÁLISE: Observou-se recuperação significativa da estabilidade emocional e remissão dos sintomas de despersonalização. 5. CONCLUSÃO: Encaminhamento satisfatório com alta parcial prevista para mais 4 sessões.',
       date: 'São Paulo, 26 de Setembro de 2026',
-      signature: 'Documento assinado eletronicamente • Token de Autenticidade: 91fa-22bb-65de'
+      signature: 'Documento assinado eletronicamente • Código de Autenticidade: 91fa-22bb-65de'
     }
   }
 ];
@@ -287,7 +287,7 @@ export const COMPARISON_DATA = [
     iaGenerica: 'Genérica'
   },
   {
-    feature: 'Rascunho SOAP revisado e assinado por você',
+    feature: 'Rascunho da evolução revisado e assinado por você',
     terapiaInFoco: true,
     whatsappZoom: false,
     prontuarioGenerico: false,
@@ -332,7 +332,7 @@ export const FAQS = [
   {
     category: 'Segurança & LGPD',
     question: 'A inteligência artificial retém ou utiliza os dados dos meus pacientes para treinamento?',
-    answer: 'Não. A síntese do rascunho SOAP usa a API da OpenAI, que não usa os dados enviados pela API para treinar modelos. Antes do envio, nomes, CPF, telefones e e-mails são removidos do texto. A teleconsulta não é gravada: o áudio vira texto durante a sessão e é descartado, e a síntese só acontece com o consentimento específico do paciente para uso de IA, registrado na plataforma.'
+    answer: 'Não. O rascunho da evolução é gerado com a OpenAI, que não usa os dados enviados pela API para treinar modelos. Antes do envio, nomes, CPF, telefones e e-mails são removidos do texto. A teleconsulta não é gravada: o áudio vira texto durante a sessão e é descartado, e a síntese só acontece com o consentimento específico do paciente para uso de IA, registrado na plataforma.'
   },
   {
     category: 'Segurança & LGPD',
@@ -342,7 +342,7 @@ export const FAQS = [
   {
     category: 'Teleconsulta & Prática',
     question: 'Por que a teleconsulta acontece em uma sala própria e não no Google Meet ou Zoom?',
-    answer: 'A sessão acontece em uma sala própria (WebRTC ponta a ponta), criada para cada consulta: só entram o psicólogo e o paciente daquela sessão, com sala de espera, e nenhuma gravação de áudio ou vídeo é feita. A fala é transcrita durante a sessão e o áudio é descartado logo em seguida, então os dados de saúde não passam por ferramentas de videoconferência de terceiros.'
+    answer: 'A sessão acontece em uma sala própria, com vídeo criptografado de ponta a ponta, criada para cada consulta: só entram o psicólogo e o paciente daquela sessão, com sala de espera, e nenhuma gravação de áudio ou vídeo é feita. A fala é transcrita durante a sessão e o áudio é descartado logo em seguida, então os dados de saúde não passam por ferramentas de videoconferência de terceiros.'
   },
   {
     category: 'Prontuário & Documentos',
@@ -363,7 +363,7 @@ export const PRICING_PLANS = [
       'Até 40 sessões por mês',
       'Sala de teleconsulta própria com link automático',
       'Transcrição com IA (20 horas/mês)',
-      'Rascunho de notas SOAP revisado por você',
+      'Rascunho da evolução clínica revisado por você',
       'Prontuário eletrônico imutável (CFP nº 001/2009)',
       'Lembretes automáticos por e-mail',
       'Prontuário e dados do paciente cifrados',
@@ -383,7 +383,7 @@ export const PRICING_PLANS = [
       'Sessões ilimitadas',
       'Teleconsulta ilimitada com sala de espera',
       'Transcrição com IA ilimitada',
-      'Geração avançada SOAP com comparação de sessões',
+      'Rascunho avançado da evolução com comparação entre sessões',
       'Emissão de Atestados, Laudos e Declarações (CFP 006/2019)',
       'Assinatura eletrônica com validação por QR Code',
       'Guarda legal de 20 anos e pedidos de exclusão LGPD',
