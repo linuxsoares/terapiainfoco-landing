@@ -66,7 +66,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
               className="hover:text-teal-600 transition-colors flex items-center gap-1.5 text-slate-800 font-semibold"
             >
               <Sparkles className="w-4 h-4 text-teal-500" />
-              Simulador SOAP
+              Simulador de Evolução
             </a>
             <a
               href="#seguranca"
@@ -164,7 +164,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo }) => {
               onClick={() => setMobileMenuOpen(false)}
               className="block py-2 text-sm font-semibold text-slate-800 hover:text-teal-800"
             >
-              ✨ Simulador de IA Clínica (SOAP)
+              ✨ Simulador de Evolução Clínica com IA
             </a>
 
             <a

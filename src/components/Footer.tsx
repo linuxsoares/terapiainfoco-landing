@@ -27,7 +27,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDemo }) => {
             </div>
 
             <p className="text-slate-400 leading-relaxed text-xs max-w-sm">
-              Plataforma de telepsicologia especializada que une teleconsulta própria sem gravação, transcrição das sessões, rascunho de evolução SOAP com IA e prontuário cifrado conforme a LGPD.
+              Plataforma de telepsicologia especializada que une teleconsulta própria sem gravação, transcrição das sessões, rascunho da evolução clínica com IA e prontuário cifrado conforme a LGPD.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDemo }) => {
             <ul className="space-y-2 text-slate-400">
               <li className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Dados de saúde cifrados (AES-256-GCM)</span>
+                <span>Dados de saúde criptografados</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <Lock className="w-3.5 h-3.5 text-emerald-400" />

@@ -146,7 +146,7 @@ export const ValidationPortal: React.FC = () => {
                 <div className="p-3.5 rounded-xl bg-slate-900 text-white text-xs space-y-1">
                   <span className="text-[10px] uppercase font-bold tracking-wider text-slate-400 flex items-center gap-1.5">
                     <Lock className="w-3.5 h-3.5 text-teal-400" />
-                    Assinatura Digital PAdES / SHA-256 Hash
+                    Código de verificação da assinatura digital
                   </span>
                   <p className="font-mono text-[11px] text-emerald-400 break-all">
                     {result.document.signaturePadesHash}
@@ -165,7 +165,7 @@ export const ValidationPortal: React.FC = () => {
               <div className="p-6 rounded-2xl bg-rose-50 border border-rose-200 text-center space-y-2">
                 <AlertCircle className="w-8 h-8 text-rose-600 mx-auto" />
                 <h4 className="text-sm font-bold text-rose-900">
-                  Documento Não Encontrado ou Token Inválido
+                  Documento Não Encontrado ou Código Inválido
                 </h4>
                 <p className="text-xs text-rose-700 max-w-md mx-auto">
                   {result?.message || 'Verifique se o código verificador de 32 caracteres foi digitado corretamente ou se o documento foi cancelado.'}
