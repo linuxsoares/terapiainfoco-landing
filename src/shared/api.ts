@@ -64,3 +64,13 @@ export interface ValidateDocumentResponse {
   };
   message?: string;
 }
+
+/** Depoimento sobre a plataforma aprovado pelo Admin (packages/shared/src/platformTestimonials.ts) */
+export interface PublicPlatformTestimonial {
+  id: string;
+  /** "Beatriz S." (psicólogo) ou "MSO" (paciente, só iniciais) */
+  authorName: string;
+  authorRole: 'PSICOLOGO_TITULAR' | 'PACIENTE';
+  content: string;
+  submittedAt: string;
+}
