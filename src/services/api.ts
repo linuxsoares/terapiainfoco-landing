@@ -1,4 +1,4 @@
-import type { CreateLeadDTO, SubscribeNewsletterDTO, ValidateDocumentResponse } from '../shared';
+import type { CreateLeadDTO, PublicPlatformTestimonial, SubscribeNewsletterDTO, ValidateDocumentResponse } from '../shared';
 
 // Em produção a URL da API vem do build (VITE_API_URL); localhost só no desenvolvimento
 const configuredApiUrl = (import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3000/api' : '')).trim().replace(/\/+$/, '');
@@ -47,6 +47,15 @@ export const landingApi = {
   async subscribeNewsletter(dto: SubscribeNewsletterDTO): Promise<string> {
     const res = await fetchJson<{ message?: string }>('/newsletter/subscribe', { method: 'POST', body: JSON.stringify(dto) });
     return res.message || 'Enviamos um link de confirmação para o seu e-mail.';
+  },
+
+  /** Depoimentos de psicólogos e pacientes aprovados pelo Admin (lista vazia se a API não responde) */
+  async listTestimonials(limit = 9): Promise<PublicPlatformTestimonial[]> {
+    try {
+      return (await fetchJson<{ testimonials: PublicPlatformTestimonial[] }>(`/platform-testimonials/public?limit=${limit}`)).testimonials;
+    } catch {
+      return [];
+    }
   },
 
   /** Consulta pública de autenticidade documental via QR Code / token */

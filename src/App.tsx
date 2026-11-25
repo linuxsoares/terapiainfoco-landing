@@ -14,6 +14,7 @@ import { NewsletterSection } from './components/NewsletterSection';
 import { LeadModal } from './components/LeadModal';
 import { FindTherapistSection } from './components/FindTherapistSection';
 import { ValidationPortal } from './components/ValidationPortal';
+import { TestimonialsSection } from './components/TestimonialsSection';
 import { LEGAL_HASHES, LegalPage, type LegalPageKind } from './components/LegalPage';
 
 
@@ -81,6 +82,9 @@ export function App() {
 
         {/* Comparison Matrix: TerapiaInFoco vs Generic Tools */}
         <ComparisonTable />
+
+        {/* Depoimentos de psicólogos e pacientes aprovados no painel do Admin */}
+        <TestimonialsSection />
 
         {/* Transparent Pricing Plans */}
         <PricingSection onOpenDemo={handleOpenDemo} />
