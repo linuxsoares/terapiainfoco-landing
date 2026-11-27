@@ -1,4 +1,4 @@
-import { Search, BadgeCheck, CalendarCheck, Video, ArrowRight } from 'lucide-react';
+import { Search, BadgeCheck, CalendarCheck, MessageSquareText, Video, ArrowRight } from 'lucide-react';
 import { PANEL_LINKS } from '../config';
 
 const STEPS = [
@@ -16,6 +16,11 @@ const STEPS = [
     icon: CalendarCheck,
     title: 'Agende',
     text: 'Com sua conta de paciente, escolha o horário e aceite o termo de consentimento.'
+  },
+  {
+    icon: MessageSquareText,
+    title: 'Prepare',
+    text: 'Na véspera, conte ao seu psicólogo o que você quer trazer para a sessão.'
   },
   {
     icon: Video,
@@ -38,7 +43,7 @@ export function FindTherapistSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {STEPS.map(({ icon: Icon, title, text }) => (
             <div key={title} className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center mb-3">

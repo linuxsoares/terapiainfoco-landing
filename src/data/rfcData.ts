@@ -130,10 +130,11 @@ export const RFC_MODULES = [
     id: 'modulo-preparar',
     badge: 'Etapa 2 • Preparar',
     title: 'Sessão Anterior à Mão & Pontos para Retomar',
-    description: 'Ao entrar na sala, você já vê o que combinou na última sessão: o plano em destaque, as metas em aberto e a evolução das escalas, sem abrir o prontuário.',
+    description: 'Ao entrar na sala, você já vê o que o paciente quer trazer hoje e o que vocês combinaram na última sessão: o plano em destaque, as metas em aberto e a evolução das escalas, sem abrir o prontuário.',
     highlights: [
+      'Check-in do paciente na véspera: ele conta o que quer trazer e como foi a semana, com alerta se houver sinal de risco',
       'O plano da última evolução em destaque; subjetivo, objetivo e avaliação a um clique',
-      'Alertas de crise e marcadores importantes da sessão anterior, metas em aberto e PHQ-9/GAD-7 com a pontuação anterior',
+      'Alertas de crise da sessão anterior, metas em aberto e PHQ-9/GAD-7 com a pontuação anterior',
       'Pontos para retomar sugeridos pela IA, cada um com a origem para você conferir (só com autorização do paciente)',
       'Só você vê: o paciente nunca vê o painel, que também some quando você compartilha a tela'
     ],
@@ -384,6 +385,7 @@ export const PRICING_PLANS = [
       'Rascunho da evolução clínica revisado por você',
       'Prontuário eletrônico imutável (CFP nº 001/2009)',
       'Lembretes automáticos por e-mail',
+      'Página pública na busca de psicólogos, com ajuda da IA para escrever o perfil',
       'Prontuário e dados do paciente cifrados',
       'Suporte via chat prioritário'
     ],
@@ -402,6 +404,7 @@ export const PRICING_PLANS = [
       'Teleconsulta ilimitada com sala de espera',
       'Transcrição com IA ilimitada',
       'Rascunho avançado da evolução com comparação entre sessões',
+      'Sessão anterior à mão, check-in do paciente e pontos para retomar com IA',
       'Emissão de Atestados, Laudos e Declarações (CFP 006/2019)',
       'Assinatura eletrônica com validação por QR Code',
       'Guarda legal de 20 anos e pedidos de exclusão LGPD',

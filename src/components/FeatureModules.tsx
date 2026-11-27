@@ -178,6 +178,12 @@ export const FeatureModules: React.FC = () => {
                   </div>
 
                   <div className="bg-slate-800/90 rounded-xl p-4 border border-slate-700 space-y-1">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-teal-300">O paciente quer trazer</p>
+                    <p className="text-sm text-slate-200">"Quero falar da conversa difícil com minha mãe no domingo."</p>
+                    <p className="text-[11px] text-slate-400">Check-in do paciente · ontem, 21:40</p>
+                  </div>
+
+                  <div className="bg-slate-800/90 rounded-xl p-4 border border-slate-700 space-y-1">
                     <p className="text-[11px] font-bold uppercase tracking-wider text-teal-300">Plano</p>
                     <p className="text-sm text-slate-200">Manter o diário de pensamentos. Higiene do sono. Próxima sessão: crenças sobre perfeccionismo.</p>
                   </div>
@@ -198,6 +204,7 @@ export const FeatureModules: React.FC = () => {
                       <Sparkles className="w-3.5 h-3.5 text-teal-400" />
                       Pontos para retomar
                     </p>
+                    <p className="text-slate-200">• Conversa com a mãe no domingo <span className="text-slate-400">(Check-in do paciente)</span></p>
                     <p className="text-slate-200">• Como foi o diário de pensamentos na semana <span className="text-slate-400">(Plano da sessão 7)</span></p>
                     <p className="text-slate-200">• Ansiedade caiu de 14 para 8 no GAD-7 <span className="text-slate-400">(Escalas)</span></p>
                     <p className="text-[11px] text-teal-300/80 pt-1">Sugestão da IA a partir do seu registro. A condução é sua.</p>
