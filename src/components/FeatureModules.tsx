@@ -10,7 +10,8 @@ import {
   BellRing,
   QrCode,
   Lock,
-  Layers
+  Layers,
+  History
 } from 'lucide-react';
 import { RFC_MODULES } from '../data/rfcData';
 
@@ -19,6 +20,7 @@ export const FeatureModules: React.FC = () => {
 
   const moduleIcons = [
     <Calendar className="w-5 h-5" />,
+    <History className="w-5 h-5" />,
     <Video className="w-5 h-5" />,
     <Sparkles className="w-5 h-5" />,
     <FileSpreadsheet className="w-5 h-5" />,
@@ -164,8 +166,47 @@ export const FeatureModules: React.FC = () => {
                 </div>
               )}
 
-              {/* Module 2 Visual: Sala de teleconsulta própria & sala de espera */}
+              {/* Module 2 Visual: painel da sessão anterior na sala */}
               {selectedModule === 1 && (
+                <div className="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 shadow-md space-y-4">
+                  <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                    <div className="flex items-center gap-2">
+                      <History className="w-4 h-4 text-teal-400" />
+                      <span className="text-sm font-bold text-white">Sessão Anterior</span>
+                    </div>
+                    <span className="text-xs text-slate-400">Sessão 7 · 20/11</span>
+                  </div>
+
+                  <div className="bg-slate-800/90 rounded-xl p-4 border border-slate-700 space-y-1">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-teal-300">Plano</p>
+                    <p className="text-sm text-slate-200">Manter o diário de pensamentos. Higiene do sono. Próxima sessão: crenças sobre perfeccionismo.</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 text-xs">
+                    <div className="bg-slate-800/60 rounded-xl p-3 border border-slate-700">
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-teal-300">Meta em aberto</p>
+                      <p className="text-slate-200 mt-1">Dormir 7h por noite <span className="text-slate-400">· 60%</span></p>
+                    </div>
+                    <div className="bg-slate-800/60 rounded-xl p-3 border border-slate-700">
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-teal-300">GAD-7</p>
+                      <p className="text-slate-200 mt-1">8 (leve) <span className="text-slate-400">· antes 14</span></p>
+                    </div>
+                  </div>
+
+                  <div className="bg-teal-950/50 border border-teal-800/60 rounded-xl p-3.5 text-xs space-y-1.5">
+                    <p className="font-bold flex items-center gap-1.5 text-teal-200">
+                      <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+                      Pontos para retomar
+                    </p>
+                    <p className="text-slate-200">• Como foi o diário de pensamentos na semana <span className="text-slate-400">(Plano da sessão 7)</span></p>
+                    <p className="text-slate-200">• Ansiedade caiu de 14 para 8 no GAD-7 <span className="text-slate-400">(Escalas)</span></p>
+                    <p className="text-[11px] text-teal-300/80 pt-1">Sugestão da IA a partir do seu registro. A condução é sua.</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Module 3 Visual: Sala de teleconsulta própria & sala de espera */}
+              {selectedModule === 2 && (
                 <div className="bg-slate-900 text-white rounded-2xl p-6 border border-slate-800 shadow-md space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-800 pb-3">
                     <div className="flex items-center gap-2">
@@ -199,8 +240,8 @@ export const FeatureModules: React.FC = () => {
                 </div>
               )}
 
-              {/* Module 3 Visual: AI Diarization */}
-              {selectedModule === 2 && (
+              {/* Module 4 Visual: AI Diarization */}
+              {selectedModule === 3 && (
                 <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
@@ -235,8 +276,8 @@ export const FeatureModules: React.FC = () => {
                 </div>
               )}
 
-              {/* Module 4 Visual: Immutability & Audit Trail */}
-              {selectedModule === 3 && (
+              {/* Module 5 Visual: Immutability & Audit Trail */}
+              {selectedModule === 4 && (
                 <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
@@ -269,8 +310,8 @@ export const FeatureModules: React.FC = () => {
                 </div>
               )}
 
-              {/* Module 5 Visual: Official Documents with QR Code */}
-              {selectedModule === 4 && (
+              {/* Module 6 Visual: Official Documents with QR Code */}
+              {selectedModule === 5 && (
                 <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-md space-y-4">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                     <div className="flex items-center gap-2">
