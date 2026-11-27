@@ -127,8 +127,21 @@ export const RFC_MODULES = [
     tag: 'Redução de No-show'
   },
   {
+    id: 'modulo-preparar',
+    badge: 'Etapa 2 • Preparar',
+    title: 'Sessão Anterior à Mão & Pontos para Retomar',
+    description: 'Ao entrar na sala, você já vê o que combinou na última sessão: o plano em destaque, as metas em aberto e a evolução das escalas, sem abrir o prontuário.',
+    highlights: [
+      'O plano da última evolução em destaque; subjetivo, objetivo e avaliação a um clique',
+      'Alertas de crise e marcadores importantes da sessão anterior, metas em aberto e PHQ-9/GAD-7 com a pontuação anterior',
+      'Pontos para retomar sugeridos pela IA, cada um com a origem para você conferir (só com autorização do paciente)',
+      'Só você vê: o paciente nunca vê o painel, que também some quando você compartilha a tela'
+    ],
+    tag: 'Contexto em segundos'
+  },
+  {
     id: 'modulo-2',
-    badge: 'Etapa 2 • Atender',
+    badge: 'Etapa 3 • Atender',
     title: 'Teleconsulta Própria, sem Gravação',
     description: 'Sala de vídeo da própria plataforma, criada para cada consulta: só o psicólogo e o paciente da sessão entram, nada é gravado e a transcrição alimenta o prontuário.',
     highlights: [
@@ -141,7 +154,7 @@ export const RFC_MODULES = [
   },
   {
     id: 'modulo-3',
-    badge: 'Etapa 3 • Transcrever',
+    badge: 'Etapa 4 • Transcrever',
     title: 'Transcrição & Rascunho da Evolução com IA',
     description: 'Capture as falas com consentimento verificado, separe com precisão quem é psicólogo e quem é paciente, e receba um rascunho da evolução clínica em segundos.',
     highlights: [
@@ -154,7 +167,7 @@ export const RFC_MODULES = [
   },
   {
     id: 'modulo-4',
-    badge: 'Etapa 4 • Registrar',
+    badge: 'Etapa 5 • Registrar',
     title: 'Prontuário Imutável & Notas Confidenciais',
     description: 'Registro cronológico inviolável com separação legal entre o prontuário oficial (direito do paciente) e as impressões reflexivas privadas do terapeuta.',
     highlights: [
@@ -167,7 +180,7 @@ export const RFC_MODULES = [
   },
   {
     id: 'modulo-5',
-    badge: 'Etapa 5 • Emitir documentos',
+    badge: 'Etapa 6 • Emitir documentos',
     title: 'Emissão de Laudos & Validação Pública QR Code',
     description: 'Crie documentos oficiais conforme a Resolução CFP nº 006/2019 com assinatura eletrônica e um código público para terceiros conferirem a autenticidade.',
     highlights: [
@@ -333,6 +346,11 @@ export const FAQS = [
     category: 'Segurança & LGPD',
     question: 'A inteligência artificial retém ou utiliza os dados dos meus pacientes para treinamento?',
     answer: 'Não. O rascunho da evolução é gerado com a OpenAI, que não usa os dados enviados pela API para treinar modelos. Antes do envio, nomes, CPF, telefones e e-mails são removidos do texto. A teleconsulta não é gravada: o áudio vira texto durante a sessão e é descartado, e a síntese só acontece com o consentimento específico do paciente para uso de IA, registrado na plataforma.'
+  },
+  {
+    category: 'Teleconsulta & Prática',
+    question: 'A IA decide o que vou tratar na sessão?',
+    answer: 'Não. Ao entrar na consulta você vê o plano que registrou na sessão anterior, as metas em aberto e as escalas. Se quiser, o botão "Sugerir com IA" lista até 5 pontos que vale retomar, cada um com a origem (ex.: "Plano da sessão 7") para você conferir. São lembretes tirados do seu próprio registro, não uma pauta: a condução continua sendo sua. A IA não recebe o nome do paciente nem as suas notas privadas, nada disso vai para o prontuário, e o recurso só funciona com o consentimento do paciente para uso de IA.'
   },
   {
     category: 'Segurança & LGPD',
